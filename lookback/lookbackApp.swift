@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct lookbackApp: App {
+   let dataLayer = DataLayer.shared
+   
    var body: some Scene {
       WindowGroup {
          TabView {
@@ -17,6 +19,7 @@ struct lookbackApp: App {
                   Image(systemName: "list.dash")
                   Text("Activities")
                }
+               .environment(\.managedObjectContext, dataLayer.context)
          }
       }
    }

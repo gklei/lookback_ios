@@ -9,20 +9,27 @@ import SwiftUI
 import UIKit
 
 struct ActivityView: View {
-   let gridViewModel = ActivityGridViewModel()
+   let viewModel: ActivityGridViewModel
+   
    var body: some View {
-      ActivityGridViewController(viewModel: gridViewModel)
+      ActivityGridViewController(viewModel: viewModel)
          .navigationTitle("Activity")
          .navigationBarTitleDisplayMode(.inline)
    }
 }
 
 class ActivityGridViewModel: ActivityViewControllerDataSource, ActivityViewControllerDelegate {
+   let activity: Activity
+   
+   init(activity: Activity) {
+      self.activity = activity
+   }
+   
    func activityViewControllerDidShake() {
    }
    
    func marker(at date: Date) -> Marker? {
-      return nil
+      return activity.marker(for: date)
    }
    
    func dateTapped(_ date: Date, in: ActivityViewController.ViewModel, at: IndexPath) {

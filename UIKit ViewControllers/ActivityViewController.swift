@@ -15,6 +15,8 @@ protocol ActivityViewControllerDataSource: class {
 class ActivityViewController: UIViewController {
    fileprivate var _calendarGrid: CalendarGridViewController!
    weak var dataSource: ActivityViewControllerDataSource?
+   weak var delegate: ActivityViewControllerDelegate?
+   
    var viewModel = ViewModel()
    fileprivate let _bobRossQuoteLabel: UILabel = {
       let label = UILabel()

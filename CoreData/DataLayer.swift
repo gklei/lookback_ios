@@ -35,7 +35,9 @@ extension Marker {
    }
 }
 
-class ProgressDataLayer {
+class DataLayer {
+   static let shared = DataLayer()
+   
    // MARK: - Core Data Stack
    private lazy var persistentContainer: NSPersistentContainer = {
       /*
@@ -44,7 +46,7 @@ class ProgressDataLayer {
        application to it. This property is optional since there are legitimate
        error conditions that could cause the creation of the store to fail.
        */
-      let container = NSPersistentContainer(name: "Streaks")
+      let container = NSPersistentContainer(name: "lookback")
       container.loadPersistentStores(completionHandler: { (storeDescription, error) in
          if let error = error as NSError? {
             /*
@@ -61,7 +63,7 @@ class ProgressDataLayer {
       return container
    }()
    
-   private var context: NSManagedObjectContext {
+   var context: NSManagedObjectContext {
       return persistentContainer.viewContext
    }
    
@@ -71,7 +73,7 @@ class ProgressDataLayer {
       updateFetchedActivities()
    }
    
-   fileprivate func _newStreakName() -> String {
+   fileprivate func _newActivityName() -> String {
       switch fetchedActivities.count {
       case 0: return "New Activity"
       default: return "\(fetchedActivities.count + 1).New Activity"
@@ -87,7 +89,7 @@ class ProgressDataLayer {
    }
    
    func createActivity() -> Activity {
-      let name = _newStreakName()
+      let name = _newActivityName()
       let entity = NSEntityDescription.entity(forEntityName: "Activity", in: context)
       let newStreak = NSManagedObject(entity: entity!, insertInto: context)
       

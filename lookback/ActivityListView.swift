@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-struct Activity2: Identifiable {
-   let id = UUID()
-   let title: String
-}
-
 struct ActivityListView: View {
    @State private var editMode = EditMode.inactive
    
-   @State private var activities: [Activity2] = [
-      Activity2(title: "Push-Ups"),
-      Activity2(title: "Reading")
-   ]
+   @Environment(\.managedObjectContext) private var viewContext
+   
+   @FetchRequest(
+      sortDescriptors: [NSSortDescriptor(keyPath: \Activity.creationDate, ascending: true)],
+      animation: .default
+   )
+   private var activities: FetchedResults<Activity>
    
    private var addButton: some View {
       switch editMode {
@@ -31,8 +29,9 @@ struct ActivityListView: View {
       NavigationView {
          List {
             ForEach(activities) { activity in
-               NavigationLink(destination: ActivityView()) {
-                     Text(activity.title)
+               let vm = ActivityGridViewModel(activity: activity)
+               NavigationLink(destination: ActivityView(viewModel: vm)) {
+                     Text(activity.name!)
                }
             }
             .onDelete(perform: onDelete)
@@ -46,21 +45,40 @@ struct ActivityListView: View {
    }
    
    func onAdd() {
-      let new = Activity2(title: "New activity \(activities.count + 1)")
-      activities.append(new)
+      withAnimation {
+         let newActivity = DataLayer.shared.createActivity()
+         print("creating new activity: \(newActivity)")
+          do {
+              try viewContext.save()
+          } catch {
+              // Replace this implementation with code to handle the error appropriately.
+              // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+              let nsError = error as NSError
+              fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+          }
+      }
    }
    
    private func onDelete(offsets: IndexSet) {
-      activities.remove(atOffsets: offsets)
+      withAnimation {
+          offsets.map { activities[$0] }.forEach(viewContext.delete)
+          do {
+              try viewContext.save()
+          } catch {
+              // Replace this implementation with code to handle the error appropriately.
+              // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+              let nsError = error as NSError
+              fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+          }
+      }
    }
    
    private func onMove(source: IndexSet, destination: Int) {
-      activities.move(fromOffsets: source, toOffset: destination)
    }
 }
 
-struct ContentView_Previews: PreviewProvider {
-   static var previews: some View {
-      ActivityListView()
-   }
-}
+//struct ContentView_Previews: PreviewProvider {
+//   static var previews: some View {
+//      ActivityListView()
+//   }
+//}
