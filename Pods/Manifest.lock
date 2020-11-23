@@ -1,0 +1,16 @@
+PODS:
+  - ALGReversedFlowLayout (0.1.0)
+
+DEPENDENCIES:
+  - ALGReversedFlowLayout
+
+SPEC REPOS:
+  trunk:
+    - ALGReversedFlowLayout
+
+SPEC CHECKSUMS:
+  ALGReversedFlowLayout: edb883d4f573beeb64e9c8e79f1acd1de8f9f477
+
+PODFILE CHECKSUM: 0f89b2b0b3996120ad529a8e6ca40cb96fad54c3
+
+COCOAPODS: 1.9.3

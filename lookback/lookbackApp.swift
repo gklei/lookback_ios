@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct lookbackApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+   var body: some Scene {
+      WindowGroup {
+         TabView {
+            ActivityListView()
+               .tabItem {
+                  Image(systemName: "list.dash")
+                  Text("Activities")
+               }
+         }
+      }
+   }
 }
