@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ActivityRowViewModel {
    let activity: Activity
-   let dateFormatter = DateFormatter()
+   static let dateFormatter = DateFormatter()
    
    init(activity: Activity) {
       self.activity = activity
-      self.dateFormatter.dateStyle = .medium
+      Self.dateFormatter.dateStyle = .medium
    }
    
    var creationDate: String {
-      return dateFormatter.string(from: activity.creationDate!)
+      return Self.dateFormatter.string(from: activity.creationDate!)
    }
    
    var name: String {

@@ -31,7 +31,10 @@ struct ActivityListView: View {
             .onDelete(perform: onDelete)
          }
          .navigationBarTitle("Activities")
-         .navigationBarItems(leading: EditButton(), trailing: addButton)
+         .navigationBarItems(
+            leading: EditButton().disabled(activities.count == 0 && editMode == .inactive),
+            trailing: addButton
+         )
          .listStyle(PlainListStyle())
          .environment(\.editMode, $editMode)
       }
@@ -48,6 +51,9 @@ struct ActivityListView: View {
       withAnimation {
          offsets.map { activities[$0] }.forEach(dataLayer.delete)
          dataLayer.save()
+      }
+      if activities.count == 0 {
+         editMode = .inactive
       }
    }
 }

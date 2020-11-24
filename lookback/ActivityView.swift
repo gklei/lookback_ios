@@ -10,6 +10,13 @@ import UIKit
 
 struct ActivityView: View {
    let viewModel: ActivityViewModel
+   private var editButton: some View {
+      Button(action: {
+         print("edit")
+      }) {
+         Image(systemName: "pencil").imageScale(.large)
+      }
+   }
    
    init(activity: Activity, dataLayer: DataLayer) {
       self.viewModel = ActivityViewModel(activity: activity, dataLayer: dataLayer)
@@ -19,6 +26,7 @@ struct ActivityView: View {
       ActivityGridView(viewModel: viewModel)
          .navigationTitle(viewModel.activity.name!)
          .navigationBarTitleDisplayMode(.inline)
+         .navigationBarItems(trailing: editButton)
    }
 }
 
