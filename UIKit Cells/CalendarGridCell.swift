@@ -34,7 +34,7 @@ class CalendarGridCell: UICollectionViewCell {
    
    fileprivate lazy var _monthLabel: UILabel = {
       let label = UILabel()
-      label.font = .systemFont(ofSize: 14, weight: .medium)
+      label.font = .systemFont(ofSize: 14, weight: .semibold)
       label.textColor = UIColor(.white)
       return label
    }()

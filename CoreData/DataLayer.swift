@@ -91,14 +91,14 @@ class DataLayer: ObservableObject {
    func createActivity() -> Activity {
       let name = _newActivityName()
       let entity = NSEntityDescription.entity(forEntityName: "Activity", in: context)
-      let newStreak = NSManagedObject(entity: entity!, insertInto: context)
+      let newActivity = NSManagedObject(entity: entity!, insertInto: context)
       
-      newStreak.setValue(name, forKey: "name")
-      newStreak.setValue(Date(), forKey: "creationDate")
-      newStreak.setValue(ProgressColor.markerYellow.rawValue, forKey: "markerColorHex")
+      newActivity.setValue(name, forKey: "name")
+      newActivity.setValue(Date(), forKey: "creationDate")
+      newActivity.setValue(ProgressColor.markerGreen.rawValue, forKey: "markerColorHex")
       
-      fetchedActivities.append(newStreak as! Activity)
-      return newStreak as! Activity
+      fetchedActivities.append(newActivity as! Activity)
+      return newActivity as! Activity
    }
    
    // MARK: - Core Data Saving support

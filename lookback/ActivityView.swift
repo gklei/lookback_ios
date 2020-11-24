@@ -9,50 +9,60 @@ import SwiftUI
 import UIKit
 
 struct ActivityView: View {
-   let viewModel: ActivityViewModel
+   @ObservedObject var viewModel: ActivityViewModel
+   @State private var showEditSheet: Bool = false
+   private var isNew: Bool = false
+   
    private var editButton: some View {
       Button(action: {
-         print("edit")
+         showEditSheet = true
       }) {
-         Image(systemName: "pencil").imageScale(.large)
+         Image(systemName: "square.and.pencil").imageScale(.large)
       }
    }
    
-   init(activity: Activity, dataLayer: DataLayer) {
+   init(activity: Activity, dataLayer: DataLayer, isNew: Bool = false) {
       self.viewModel = ActivityViewModel(activity: activity, dataLayer: dataLayer)
+      self.isNew = isNew
    }
    
    var body: some View {
       ActivityGridView(viewModel: viewModel)
-         .navigationTitle(viewModel.activity.name!)
+         .alert(
+            isPresented: $showEditSheet,
+            TextAlert(
+               title: "Activity Name",
+               placeholder: viewModel.name,
+               action: viewModel.updateName)
+         )
+         .navigationBarTitle(viewModel.name)
          .navigationBarTitleDisplayMode(.inline)
          .navigationBarItems(trailing: editButton)
+         .onAppear(perform: {
+            if isNew {
+               showEditSheet.toggle()
+            }
+         })
    }
 }
 
-struct ActivityGridView: UIViewControllerRepresentable {
-   typealias UIViewControllerType = ActivityViewController
-   
-   @EnvironmentObject var dataLayer: DataLayer
-   let viewModel: ActivityViewModel
-   
-   func makeUIViewController(context: Context) -> ActivityViewController {
-      let vc = ActivityViewController()
-      vc.dataSource = viewModel
-      vc.delegate = viewModel
-      return vc
-   }
-   
-   func updateUIViewController(_ uiViewController: ActivityViewController, context: Context) {}
-}
-
-class ActivityViewModel: ActivityViewControllerDataSource, ActivityViewControllerDelegate {
+class ActivityViewModel: ObservableObject, ActivityViewControllerDataSource, ActivityViewControllerDelegate {
    let activity: Activity
    let dataLayer: DataLayer
    
    init(activity: Activity, dataLayer: DataLayer) {
       self.activity = activity
       self.dataLayer = dataLayer
+   }
+   
+   var name: String {
+      return activity.name!
+   }
+   
+   func updateName(_ name: String?) {
+      guard let name = name?.trimmed, name != "" else { return }
+      activity.name = name
+      dataLayer.save()
    }
    
    func marker(at date: Date) -> Marker? {

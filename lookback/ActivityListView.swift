@@ -16,6 +16,8 @@ struct ActivityListView: View {
       animation: .default
    )
    private var activities: FetchedResults<Activity>
+   @State private var newActivity: Activity?
+   @State var activityCreated: Bool = false
    
    private var addButton: some View {
       switch editMode {
@@ -26,9 +28,19 @@ struct ActivityListView: View {
    
    var body: some View {
       NavigationView {
-         List {
-            ForEach(activities, content: ActivityRowView.init)
-            .onDelete(perform: onDelete)
+         HStack {
+            if let activity = newActivity {
+               NavigationLink(
+                  destination: ActivityView(activity: activity, dataLayer: dataLayer, isNew: true),
+                  isActive: $activityCreated
+               ) {
+                  EmptyView()
+               }
+            }
+            List {
+               ForEach(activities, content: ActivityRowView.init)
+               .onDelete(perform: onDelete)
+            }
          }
          .navigationBarTitle("Activities")
          .navigationBarItems(
@@ -42,15 +54,18 @@ struct ActivityListView: View {
    
    private func onAdd() {
       withAnimation {
-         let _ = dataLayer.createActivity()
+         newActivity = dataLayer.createActivity()
          dataLayer.save()
+         dataLayer.updateFetchedActivities()
       }
+      activityCreated = true
    }
    
    private func onDelete(offsets: IndexSet) {
       withAnimation {
          offsets.map { activities[$0] }.forEach(dataLayer.delete)
          dataLayer.save()
+         dataLayer.updateFetchedActivities()
       }
       if activities.count == 0 {
          editMode = .inactive
