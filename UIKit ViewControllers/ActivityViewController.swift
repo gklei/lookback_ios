@@ -84,7 +84,7 @@ class ActivityViewController: UIViewController {
    // Enable detection of shake motion
    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
       switch motion {
-      case .motionShake: return
+      case .motionShake: delegate?.activityViewControllerDidShake()
       default: return
       }
    }
