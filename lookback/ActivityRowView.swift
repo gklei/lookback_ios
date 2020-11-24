@@ -7,18 +7,44 @@
 
 import SwiftUI
 
-struct ActivityRowView: View {
-   @EnvironmentObject var dataLayer: DataLayer
+struct ActivityRowViewModel {
    let activity: Activity
+   let dateFormatter = DateFormatter()
    
    init(activity: Activity) {
       self.activity = activity
+      self.dateFormatter.dateStyle = .medium
+   }
+   
+   var creationDate: String {
+      return dateFormatter.string(from: activity.creationDate!)
+   }
+   
+   var name: String {
+      return activity.name!
+   }
+}
+
+struct ActivityRowView: View {
+   let activity: Activity
+   let viewModel: ActivityRowViewModel
+   @EnvironmentObject var dataLayer: DataLayer
+   
+   init(activity: Activity) {
+      self.activity = activity
+      self.viewModel = ActivityRowViewModel(activity: activity)
    }
    
    var body: some View {
-      let vm = ActivityViewModel(activity: activity, dataLayer: dataLayer)
-      NavigationLink(destination: ActivityView(viewModel: vm)) {
-         Text(activity.name!)
+      NavigationLink(destination: ActivityView(activity: activity, dataLayer: dataLayer)) {
+         VStack(alignment: .leading) {
+            Text(viewModel.name)
+               .font(.system(size: 16, weight: .semibold))
+            Text(viewModel.creationDate)
+               .font(.system(size: 14))
+               .foregroundColor(.gray)
+         }
+         .frame(height: 60)
       }
    }
 }

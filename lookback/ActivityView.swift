@@ -11,6 +11,10 @@ import UIKit
 struct ActivityView: View {
    let viewModel: ActivityViewModel
    
+   init(activity: Activity, dataLayer: DataLayer) {
+      self.viewModel = ActivityViewModel(activity: activity, dataLayer: dataLayer)
+   }
+   
    var body: some View {
       ActivityGridView(viewModel: viewModel)
          .navigationTitle(viewModel.activity.name!)

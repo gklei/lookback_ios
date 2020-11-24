@@ -34,14 +34,14 @@ class CalendarGridCell: UICollectionViewCell {
    
    fileprivate lazy var _monthLabel: UILabel = {
       let label = UILabel()
-      label.font = UIFont(14, .medium)
+      label.font = .systemFont(ofSize: 14, weight: .medium)
       label.textColor = UIColor(.white)
       return label
    }()
    
    fileprivate(set) lazy var dayNumberLabel: UILabel = {
       let label = UILabel()
-      label.font = UIFont(12, .light)
+      label.font = .systemFont(ofSize: 12, weight: .light)
       label.textColor = UIColor(.outerSpace, alpha: 0.25)
       return label
    }()
@@ -133,18 +133,18 @@ class CalendarGridCell: UICollectionViewCell {
       _monthLabel.text = vm.monthLabelText
       dayNumberLabel.text = vm.dayNumberLabelText
       
-//      if isToday {
-//         _todayImageView.alpha = 1
-//         _todayImageView.tintColor = vm.cellBackgroundColor(streakIndex: streakIndex)
-//         contentView.backgroundColor = .clear
-//         contentView.borderWidth = 0
-//      } else {
+      if isToday {
+         _todayImageView.alpha = 1
+         _todayImageView.tintColor = vm.cellBackgroundColor(streakIndex: streakIndex)
+         contentView.backgroundColor = .clear
+         contentView.borderWidth = 0
+      } else {
          contentView.backgroundColor = vm.cellBackgroundColor(streakIndex: streakIndex)
          contentView.layer.borderColor = vm.cellBorderColor.cgColor
          contentView.layer.cornerRadius = vm.cellCornerRadius
          contentView.layer.borderWidth = vm.cellBorderWidth
          _todayImageView.alpha = 0
-//      }
+      }
       
       if let streak = streakIndex {
          _streakNumberLabel.text = "\(streak)"
