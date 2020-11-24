@@ -35,7 +35,7 @@ extension Marker {
    }
 }
 
-class DataLayer {
+class DataLayer: ObservableObject {
    static let shared = DataLayer()
    
    // MARK: - Core Data Stack

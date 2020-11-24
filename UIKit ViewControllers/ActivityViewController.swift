@@ -12,12 +12,21 @@ protocol ActivityViewControllerDataSource: class {
    func marker(at date: Date) -> Marker?
 }
 
+protocol ActivityViewControllerDelegate: class {
+   func activityViewControllerDidShake()
+   func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController)
+   func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController)
+}
+
+extension ActivityViewControllerDelegate {
+   func activityViewControllerDidShake() {}
+}
+
 class ActivityViewController: UIViewController {
    fileprivate var _calendarGrid: CalendarGridViewController!
    weak var dataSource: ActivityViewControllerDataSource?
    weak var delegate: ActivityViewControllerDelegate?
    
-   var viewModel = ViewModel()
    fileprivate let _bobRossQuoteLabel: UILabel = {
       let label = UILabel()
       label.numberOfLines = 0
@@ -29,6 +38,7 @@ class ActivityViewController: UIViewController {
    
    var daysBack: TimeInterval = 90 {
       didSet {
+         guard isViewLoaded else { return }
          _calendarGrid.reload()
       }
    }
@@ -42,7 +52,7 @@ class ActivityViewController: UIViewController {
    override func loadView() {
       let view = UIView()
       _calendarGrid = CalendarGridViewController(dataSource: self)
-      _calendarGrid.viewModel.delegate = self
+      _calendarGrid.delegate = self
       addChild(_calendarGrid)
       
       _bobRossQuoteLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +84,7 @@ class ActivityViewController: UIViewController {
    // Enable detection of shake motion
    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
       switch motion {
-      case .motionShake: viewModel.shake()
+      case .motionShake: return
       default: return
       }
    }
@@ -128,29 +138,6 @@ class ActivityViewController: UIViewController {
    }
 }
 
-protocol ActivityViewControllerDelegate: class {
-   func dateDoubleTapped(_ date: Date, in: ActivityViewController.ViewModel, at: IndexPath)
-   func dateTapped(_ date: Date, in: ActivityViewController.ViewModel, at: IndexPath)
-   func activityViewControllerDidShake()
-}
-
-extension ActivityViewController {
-   class ViewModel {
-      weak var delegate: ActivityViewControllerDelegate?
-      func dateDoubleTapped(_ date: Date, at indexPath: IndexPath) {
-         delegate?.dateDoubleTapped(date, in: self, at: indexPath)
-      }
-      
-      func dateTapped(_ date: Date, at indexPath: IndexPath) {
-         delegate?.dateTapped(date, in: self, at: indexPath)
-      }
-      
-      func shake() {
-         delegate?.activityViewControllerDidShake()
-      }
-   }
-}
-
 extension ActivityViewController: CalendarGridViewControllerDataSource {
    var calendar: Calendar {
       return Calendar(identifier: .gregorian)
@@ -172,13 +159,13 @@ extension ActivityViewController: CalendarGridViewControllerDataSource {
    }
 }
 
-extension ActivityViewController: CalendarGridViewModelDelegate {
-   func dateDoubleTapped(_ date: Date, in viewModel: CalendarGridViewController.ViewModel, at indexPath: IndexPath) {
-      self.viewModel.dateDoubleTapped(date, at: indexPath)
+extension ActivityViewController: CalendarGridViewControllerDelegate {
+   func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController) {
+      delegate?.dateDoubleTapped(date, at: indexPath, in: self)
    }
    
-   func dateTapped(_ date: Date, in: CalendarGridViewController.ViewModel, at indexPath: IndexPath) {
-      self.viewModel.dateTapped(date, at: indexPath)
+   func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController) {
+      delegate?.dateTapped(date, at: indexPath, in: self)
    }
 }
 

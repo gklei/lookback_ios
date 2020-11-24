@@ -17,9 +17,15 @@ protocol CalendarGridViewControllerDataSource: class {
    func marker(at date: Date) -> Marker?
 }
 
+protocol CalendarGridViewControllerDelegate: class {
+   func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController)
+   func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController)
+}
+
 class CalendarGridViewController : UIViewController {
    var viewModel = ViewModel()
    weak var dataSource: CalendarGridViewControllerDataSource?
+   weak var delegate: CalendarGridViewControllerDelegate?
    
    fileprivate var _headerVC: CalendarWeekdayHeaderViewController!
    fileprivate let _headerFadeInOffset: CGFloat = 40
@@ -188,12 +194,14 @@ extension CalendarGridViewController: UICollectionViewDataSource {
 extension CalendarGridViewController: CalendarGridCellDelegate {
    func cellDoubleTapped(cell: CalendarGridCell) {
       guard let indexPath = _cv.indexPath(for: cell) else { return }
-      viewModel.dateDoubleTapped(_date(for: indexPath), at: indexPath)
+//      viewModel.dateDoubleTapped(_date(for: indexPath), at: indexPath)
+      delegate?.dateDoubleTapped(_date(for: indexPath), at: indexPath, in: self)
    }
    
    func cellTapped(cell: CalendarGridCell) {
       guard let indexPath = _cv.indexPath(for: cell) else { return }
-      viewModel.dateTapped(_date(for: indexPath), at: indexPath)
+//      viewModel.dateTapped(_date(for: indexPath), at: indexPath)
+      delegate?.dateTapped(_date(for: indexPath), at: indexPath, in: self)
    }
 }
 

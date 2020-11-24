@@ -9,49 +9,50 @@ import SwiftUI
 import UIKit
 
 struct ActivityView: View {
-   let viewModel: ActivityGridViewModel
+   let viewModel: ActivityViewModel
    
    var body: some View {
-      ActivityGridViewController(viewModel: viewModel)
-         .navigationTitle("Activity")
+      ActivityGridView(viewModel: viewModel)
+         .navigationTitle(viewModel.activity.name!)
          .navigationBarTitleDisplayMode(.inline)
    }
 }
 
-class ActivityGridViewModel: ActivityViewControllerDataSource, ActivityViewControllerDelegate {
-   let activity: Activity
+struct ActivityGridView: UIViewControllerRepresentable {
+   typealias UIViewControllerType = ActivityViewController
    
-   init(activity: Activity) {
-      self.activity = activity
+   @EnvironmentObject var dataLayer: DataLayer
+   let viewModel: ActivityViewModel
+   
+   func makeUIViewController(context: Context) -> ActivityViewController {
+      let vc = ActivityViewController()
+      vc.dataSource = viewModel
+      vc.delegate = viewModel
+      return vc
    }
    
-   func activityViewControllerDidShake() {
+   func updateUIViewController(_ uiViewController: ActivityViewController, context: Context) {}
+}
+
+class ActivityViewModel: ActivityViewControllerDataSource, ActivityViewControllerDelegate {
+   let activity: Activity
+   let dataLayer: DataLayer
+   
+   init(activity: Activity, dataLayer: DataLayer) {
+      self.activity = activity
+      self.dataLayer = dataLayer
    }
    
    func marker(at date: Date) -> Marker? {
       return activity.marker(for: date)
    }
    
-   func dateTapped(_ date: Date, in: ActivityViewController.ViewModel, at: IndexPath) {
-      print("tapped: \(date)")
+   func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController) {
    }
    
-   func dateDoubleTapped(_ date: Date, in: ActivityViewController.ViewModel, at: IndexPath) {
-      print("double-tapped: \(date)")
-   }
-}
-
-struct ActivityGridViewController: UIViewControllerRepresentable {
-   typealias UIViewControllerType = ActivityViewController
-   let viewModel: ActivityGridViewModel
-   
-   func makeUIViewController(context: Context) -> ActivityViewController {
-      let vc = ActivityViewController()
-      vc.dataSource = viewModel
-      vc.viewModel.delegate = viewModel
-      return vc
-   }
-   
-   func updateUIViewController(_ uiViewController: ActivityViewController, context: Context) {
+   func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController) {
+      dataLayer.toggleActivity(at: date, for: activity)
+      dataLayer.save()
+      viewController.reload()
    }
 }

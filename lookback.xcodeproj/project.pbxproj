@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DB5A7F3E9090F6D10ABD569 /* Pods_lookback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6959CEB388CB710689393B2 /* Pods_lookback.framework */; };
-		8EA8108C256C1CEF004CF6A5 /* lookbackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8108B256C1CEF004CF6A5 /* lookbackApp.swift */; };
+		8EA8108C256C1CEF004CF6A5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8108B256C1CEF004CF6A5 /* App.swift */; };
 		8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */; };
 		8EA81090256C1CF1004CF6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EA8108F256C1CF1004CF6A5 /* Assets.xcassets */; };
 		8EA81093256C1CF1004CF6A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81092256C1CF1004CF6A5 /* Preview Assets.xcassets */; };
@@ -64,12 +64,13 @@
 		8EA8118A256C4B33004CF6A5 /* Gotham-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA8117D256C4B33004CF6A5 /* Gotham-MediumItalic.otf */; };
 		8EA81196256C58C3004CF6A5 /* lookback.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81194256C58C3004CF6A5 /* lookback.xcdatamodeld */; };
 		8EA81199256C597B004CF6A5 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81198256C597B004CF6A5 /* DataLayer.swift */; };
+		8EA811C6256D577B004CF6A5 /* ActivityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2651143FD1F4D50B1A9C8453 /* Pods-lookback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lookback.release.xcconfig"; path = "Target Support Files/Pods-lookback/Pods-lookback.release.xcconfig"; sourceTree = "<group>"; };
 		8EA81088256C1CEF004CF6A5 /* lookback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lookback.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EA8108B256C1CEF004CF6A5 /* lookbackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lookbackApp.swift; sourceTree = "<group>"; };
+		8EA8108B256C1CEF004CF6A5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 		8EA8108F256C1CF1004CF6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EA81092256C1CF1004CF6A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		8EA8117D256C4B33004CF6A5 /* Gotham-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-MediumItalic.otf"; sourceTree = "<group>"; };
 		8EA81195256C58C3004CF6A5 /* lookback.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lookback.xcdatamodel; sourceTree = "<group>"; };
 		8EA81198256C597B004CF6A5 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRowView.swift; sourceTree = "<group>"; };
 		9DBF3B56A8C657F1E86B48CB /* Pods-lookback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lookback.debug.xcconfig"; path = "Target Support Files/Pods-lookback/Pods-lookback.debug.xcconfig"; sourceTree = "<group>"; };
 		B6959CEB388CB710689393B2 /* Pods_lookback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lookback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,8 +171,9 @@
 		8EA8108A256C1CEF004CF6A5 /* lookback */ = {
 			isa = PBXGroup;
 			children = (
-				8EA8108B256C1CEF004CF6A5 /* lookbackApp.swift */,
+				8EA8108B256C1CEF004CF6A5 /* App.swift */,
 				8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */,
+				8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */,
 				8EA810A9256C39BC004CF6A5 /* ActivityView.swift */,
 				8EA8108F256C1CF1004CF6A5 /* Assets.xcassets */,
 				8EA81094256C1CF1004CF6A5 /* Info.plist */,
@@ -465,12 +468,13 @@
 				8EA81122256C4869004CF6A5 /* CalendarGridFooter.swift in Sources */,
 				8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */,
 				8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */,
+				8EA811C6256D577B004CF6A5 /* ActivityRowView.swift in Sources */,
 				8EA81102256C471B004CF6A5 /* UIImage+Extensions.swift in Sources */,
 				8EA81196256C58C3004CF6A5 /* lookback.xcdatamodeld in Sources */,
 				8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */,
 				8EA81106256C471B004CF6A5 /* Optional+Extensions.swift in Sources */,
 				8EA81103256C471B004CF6A5 /* UISearchBar+Extensions.swift in Sources */,
-				8EA8108C256C1CEF004CF6A5 /* lookbackApp.swift in Sources */,
+				8EA8108C256C1CEF004CF6A5 /* App.swift in Sources */,
 				8EA810AA256C39BC004CF6A5 /* ActivityView.swift in Sources */,
 				8EA810FE256C471B004CF6A5 /* Date+Extension.swift in Sources */,
 				8EA81167256C4AF2004CF6A5 /* AnimationType.swift in Sources */,
