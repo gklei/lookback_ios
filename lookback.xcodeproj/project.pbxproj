@@ -27,16 +27,15 @@
 		8EA81122256C4869004CF6A5 /* CalendarGridFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8111F256C4869004CF6A5 /* CalendarGridFooter.swift */; };
 		8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81120256C4869004CF6A5 /* ColorGridCell.swift */; };
 		8EA81124256C4869004CF6A5 /* CalendarGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81121256C4869004CF6A5 /* CalendarGridCell.swift */; };
-		8EA81131256C487D004CF6A5 /* UIButton+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81126256C487C004CF6A5 /* UIButton+Streaks.swift */; };
-		8EA81132256C487D004CF6A5 /* UIBarButtonItem+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81127256C487C004CF6A5 /* UIBarButtonItem+Streaks.swift */; };
-		8EA81133256C487D004CF6A5 /* String+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81128256C487C004CF6A5 /* String+Streaks.swift */; };
-		8EA81134256C487D004CF6A5 /* UILabel+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81129256C487C004CF6A5 /* UILabel+Streaks.swift */; };
-		8EA81135256C487D004CF6A5 /* UIImage+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112A256C487C004CF6A5 /* UIImage+Streaks.swift */; };
-		8EA81136256C487D004CF6A5 /* UITabBar+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112B256C487C004CF6A5 /* UITabBar+Streaks.swift */; };
-		8EA81137256C487D004CF6A5 /* UIViewController+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112C256C487C004CF6A5 /* UIViewController+Streaks.swift */; };
-		8EA81138256C487D004CF6A5 /* UIColor+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112D256C487C004CF6A5 /* UIColor+Streaks.swift */; };
-		8EA81139256C487D004CF6A5 /* UIView+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112E256C487D004CF6A5 /* UIView+Streaks.swift */; };
-		8EA8113B256C487D004CF6A5 /* UIFont+Streaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81130256C487D004CF6A5 /* UIFont+Streaks.swift */; };
+		8EA81131256C487D004CF6A5 /* UIButton+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81126256C487C004CF6A5 /* UIButton+Lookback.swift */; };
+		8EA81132256C487D004CF6A5 /* UIBarButtonItem+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81127256C487C004CF6A5 /* UIBarButtonItem+Lookback.swift */; };
+		8EA81133256C487D004CF6A5 /* String+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81128256C487C004CF6A5 /* String+Lookback.swift */; };
+		8EA81134256C487D004CF6A5 /* UILabel+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81129256C487C004CF6A5 /* UILabel+Lookback.swift */; };
+		8EA81135256C487D004CF6A5 /* UIImage+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112A256C487C004CF6A5 /* UIImage+Lookback.swift */; };
+		8EA81137256C487D004CF6A5 /* UIViewController+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112C256C487C004CF6A5 /* UIViewController+Lookback.swift */; };
+		8EA81138256C487D004CF6A5 /* UIColor+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112D256C487C004CF6A5 /* UIColor+Lookback.swift */; };
+		8EA81139256C487D004CF6A5 /* UIView+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112E256C487D004CF6A5 /* UIView+Lookback.swift */; };
+		8EA8113B256C487D004CF6A5 /* UIFont+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81130256C487D004CF6A5 /* UIFont+Lookback.swift */; };
 		8EA81149256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8113F256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift */; };
 		8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */; };
 		8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */; };
@@ -90,16 +89,15 @@
 		8EA8111F256C4869004CF6A5 /* CalendarGridFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridFooter.swift; sourceTree = "<group>"; };
 		8EA81120256C4869004CF6A5 /* ColorGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridCell.swift; sourceTree = "<group>"; };
 		8EA81121256C4869004CF6A5 /* CalendarGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridCell.swift; sourceTree = "<group>"; };
-		8EA81126256C487C004CF6A5 /* UIButton+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Streaks.swift"; sourceTree = "<group>"; };
-		8EA81127256C487C004CF6A5 /* UIBarButtonItem+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Streaks.swift"; sourceTree = "<group>"; };
-		8EA81128256C487C004CF6A5 /* String+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Streaks.swift"; sourceTree = "<group>"; };
-		8EA81129256C487C004CF6A5 /* UILabel+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Streaks.swift"; sourceTree = "<group>"; };
-		8EA8112A256C487C004CF6A5 /* UIImage+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Streaks.swift"; sourceTree = "<group>"; };
-		8EA8112B256C487C004CF6A5 /* UITabBar+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+Streaks.swift"; sourceTree = "<group>"; };
-		8EA8112C256C487C004CF6A5 /* UIViewController+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Streaks.swift"; sourceTree = "<group>"; };
-		8EA8112D256C487C004CF6A5 /* UIColor+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Streaks.swift"; sourceTree = "<group>"; };
-		8EA8112E256C487D004CF6A5 /* UIView+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Streaks.swift"; sourceTree = "<group>"; };
-		8EA81130256C487D004CF6A5 /* UIFont+Streaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Streaks.swift"; sourceTree = "<group>"; };
+		8EA81126256C487C004CF6A5 /* UIButton+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Lookback.swift"; sourceTree = "<group>"; };
+		8EA81127256C487C004CF6A5 /* UIBarButtonItem+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Lookback.swift"; sourceTree = "<group>"; };
+		8EA81128256C487C004CF6A5 /* String+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lookback.swift"; sourceTree = "<group>"; };
+		8EA81129256C487C004CF6A5 /* UILabel+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Lookback.swift"; sourceTree = "<group>"; };
+		8EA8112A256C487C004CF6A5 /* UIImage+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Lookback.swift"; sourceTree = "<group>"; };
+		8EA8112C256C487C004CF6A5 /* UIViewController+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lookback.swift"; sourceTree = "<group>"; };
+		8EA8112D256C487C004CF6A5 /* UIColor+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Lookback.swift"; sourceTree = "<group>"; };
+		8EA8112E256C487D004CF6A5 /* UIView+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Lookback.swift"; sourceTree = "<group>"; };
+		8EA81130256C487D004CF6A5 /* UIFont+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Lookback.swift"; sourceTree = "<group>"; };
 		8EA8113F256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarWeekdayHeaderViewController.swift; sourceTree = "<group>"; };
 		8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridViewController.swift; sourceTree = "<group>"; };
 		8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -193,16 +191,15 @@
 		8EA810D6256C471B004CF6A5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8EA81128256C487C004CF6A5 /* String+Streaks.swift */,
-				8EA81127256C487C004CF6A5 /* UIBarButtonItem+Streaks.swift */,
-				8EA81126256C487C004CF6A5 /* UIButton+Streaks.swift */,
-				8EA8112D256C487C004CF6A5 /* UIColor+Streaks.swift */,
-				8EA81130256C487D004CF6A5 /* UIFont+Streaks.swift */,
-				8EA8112A256C487C004CF6A5 /* UIImage+Streaks.swift */,
-				8EA81129256C487C004CF6A5 /* UILabel+Streaks.swift */,
-				8EA8112B256C487C004CF6A5 /* UITabBar+Streaks.swift */,
-				8EA8112E256C487D004CF6A5 /* UIView+Streaks.swift */,
-				8EA8112C256C487C004CF6A5 /* UIViewController+Streaks.swift */,
+				8EA81128256C487C004CF6A5 /* String+Lookback.swift */,
+				8EA81127256C487C004CF6A5 /* UIBarButtonItem+Lookback.swift */,
+				8EA81126256C487C004CF6A5 /* UIButton+Lookback.swift */,
+				8EA8112D256C487C004CF6A5 /* UIColor+Lookback.swift */,
+				8EA81130256C487D004CF6A5 /* UIFont+Lookback.swift */,
+				8EA8112A256C487C004CF6A5 /* UIImage+Lookback.swift */,
+				8EA81129256C487C004CF6A5 /* UILabel+Lookback.swift */,
+				8EA8112E256C487D004CF6A5 /* UIView+Lookback.swift */,
+				8EA8112C256C487C004CF6A5 /* UIViewController+Lookback.swift */,
 				8EA810D7256C471B004CF6A5 /* Array+Extensions.swift */,
 				8EA810D9256C471B004CF6A5 /* UIViewController+Extensions.swift */,
 				8EA810DA256C471B004CF6A5 /* UIView+Extensions.swift */,
@@ -459,7 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA81149256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift in Sources */,
-				8EA8113B256C487D004CF6A5 /* UIFont+Streaks.swift in Sources */,
+				8EA8113B256C487D004CF6A5 /* UIFont+Lookback.swift in Sources */,
 				8EA81104256C471B004CF6A5 /* UIApplication+Extensions.swift in Sources */,
 				8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */,
 				8EA81124256C4869004CF6A5 /* CalendarGridCell.swift in Sources */,
@@ -480,27 +477,26 @@
 				8EA81167256C4AF2004CF6A5 /* AnimationType.swift in Sources */,
 				8EA81199256C597B004CF6A5 /* DataLayer.swift in Sources */,
 				8EA81168256C4AF2004CF6A5 /* Direction.swift in Sources */,
-				8EA81139256C487D004CF6A5 /* UIView+Streaks.swift in Sources */,
-				8EA81138256C487D004CF6A5 /* UIColor+Streaks.swift in Sources */,
+				8EA81139256C487D004CF6A5 /* UIView+Lookback.swift in Sources */,
+				8EA81138256C487D004CF6A5 /* UIColor+Lookback.swift in Sources */,
 				8EA81101256C471B004CF6A5 /* UIColor+Extensions.swift in Sources */,
 				8EA810FC256C471B004CF6A5 /* UIViewController+Extensions.swift in Sources */,
-				8EA81137256C487D004CF6A5 /* UIViewController+Streaks.swift in Sources */,
+				8EA81137256C487D004CF6A5 /* UIViewController+Lookback.swift in Sources */,
 				8EA8116C256C4AF2004CF6A5 /* ViewAnimatorConfig.swift in Sources */,
 				8EA8116E256C4AF2004CF6A5 /* Animation.swift in Sources */,
 				8EA81188256C4B33004CF6A5 /* BobRoss.swift in Sources */,
 				8EA81108256C471B004CF6A5 /* UITextField+Extensions.swift in Sources */,
 				8EA8116A256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift in Sources */,
 				8EA8116D256C4AF2004CF6A5 /* ViewAnimator.swift in Sources */,
-				8EA81131256C487D004CF6A5 /* UIButton+Streaks.swift in Sources */,
+				8EA81131256C487D004CF6A5 /* UIButton+Lookback.swift in Sources */,
 				8EA810FA256C471B004CF6A5 /* Array+Extensions.swift in Sources */,
-				8EA81132256C487D004CF6A5 /* UIBarButtonItem+Streaks.swift in Sources */,
-				8EA81136256C487D004CF6A5 /* UITabBar+Streaks.swift in Sources */,
+				8EA81132256C487D004CF6A5 /* UIBarButtonItem+Lookback.swift in Sources */,
 				8EA81169256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift in Sources */,
-				8EA81133256C487D004CF6A5 /* String+Streaks.swift in Sources */,
-				8EA81134256C487D004CF6A5 /* UILabel+Streaks.swift in Sources */,
+				8EA81133256C487D004CF6A5 /* String+Lookback.swift in Sources */,
+				8EA81134256C487D004CF6A5 /* UILabel+Lookback.swift in Sources */,
 				8EA8114F256C4A6B004CF6A5 /* ColorGridViewController.swift in Sources */,
 				8EA81107256C471B004CF6A5 /* Common+Extensions.swift in Sources */,
-				8EA81135256C487D004CF6A5 /* UIImage+Streaks.swift in Sources */,
+				8EA81135256C487D004CF6A5 /* UIImage+Lookback.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
