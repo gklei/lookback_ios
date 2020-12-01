@@ -58,6 +58,7 @@ struct ActivityRowView: View {
       HStack {
          Image(systemName: viewModel.isSelected ? "circle.fill" : "circle")
             .foregroundColor(Color(viewModel.color))
+            .padding(.trailing, 8)
          VStack(alignment: .leading, spacing: 4) {
             Text(viewModel.name)
                .font(.system(size: 16, weight: .semibold))
@@ -66,10 +67,12 @@ struct ActivityRowView: View {
                .foregroundColor(.gray)
          }
          Spacer()
-         VStack(alignment: .trailing) {
-            Text(viewModel.totalMarkersText)
-               .font(.system(size: 14))
-               .foregroundColor(.gray)
+         HStack {
+            VStack(alignment: .trailing) {
+               Text(viewModel.totalMarkersText)
+                  .font(.system(size: 14))
+                  .foregroundColor(.gray)
+            }
          }
       }
       .frame(height: 60)

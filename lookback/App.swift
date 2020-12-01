@@ -45,7 +45,7 @@ struct lookbackApp: App {
                   Text("Activities")
                }
                .environment(\.managedObjectContext, persistentContainer.viewContext)
-            SelectedActivityView(selectedActivity: $selectedActivity)
+            ActivityView(activity: $selectedActivity)
                .tabItem {
                   Image(systemName: "square.grid.4x3.fill")
                   Text("Grid")
@@ -57,19 +57,6 @@ struct lookbackApp: App {
                   Text("Settings")
                }
          }
-      }
-   }
-}
-
-struct SelectedActivityView: View {
-   @Environment(\.managedObjectContext) var moc
-   @FetchRequest(sortDescriptors: [], animation: .default) private var activities: FetchedResults<Activity>
-   @Binding var selectedActivity: Activity?
-   
-   var body: some View {
-      NavigationView {
-         ActivityView(activity: $selectedActivity).environment(\.managedObjectContext, moc)
-            .navigationBarTitle(selectedActivity?.name ?? "No Activity")
       }
    }
 }

@@ -32,10 +32,20 @@ struct ActivityListView: View {
          HStack {
             List {
                ForEach(activities) { activity in
-                  ActivityRowView(activity: activity, selection: selectedActivity)
-                     .onTapGesture {
-                        selectedActivity = activity
+                  HStack {
+                     ActivityRowView(activity: activity, selection: selectedActivity)
+                        .padding(.trailing)
+                        .onTapGesture {
+                           selectedActivity = activity
+                        }
+                     Button(action: {
+                        print("Edit activity: \(activity.name)")
+                     }) {
+                        Image(systemName: "pencil")
+                           .foregroundColor(.blue)
                      }
+                  }
+                  .buttonStyle(PlainButtonStyle())
                }
                .onDelete(perform: onDelete)
             }
@@ -67,6 +77,9 @@ struct ActivityListView: View {
       withAnimation {
          for offset in offsets {
             let activity = activities[offset]
+            if activity.id == selectedActivity?.id {
+               selectedActivity = nil
+            }
             moc.delete(activity)
          }
          try? moc.save()

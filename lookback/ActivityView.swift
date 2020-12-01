@@ -27,27 +27,33 @@ struct ActivityView: View {
    @Binding var activity: Activity?
    
    var body: some View {
-      if let activity = activity {
-         ActivityGridView(
-            activity: self.$activity,
-            selectedDate: selectedDateBinding,
-            showMarkerDetails: $showMarkerDetails,
-            updateGrid: $updateGrid
-         )
-         .environment(\.managedObjectContext, moc)
-         .sheet(isPresented: $showMarkerDetails) {
-            MarkerView(
-               activity: activity,
-               date: selectedDate!,
-               markerText: $markerText
-            )
-            .environment(\.managedObjectContext, moc)
-            .onDisappear(perform: {
-               updateGrid.toggle()
-            })
+      NavigationView {
+         Group {
+            if let activity = activity {
+               ActivityGridView(
+                  activity: self.$activity,
+                  selectedDate: selectedDateBinding,
+                  showMarkerDetails: $showMarkerDetails,
+                  updateGrid: $updateGrid
+               )
+               .environment(\.managedObjectContext, moc)
+               .sheet(isPresented: $showMarkerDetails) {
+                  MarkerView(
+                     activity: activity,
+                     date: selectedDate!,
+                     markerText: $markerText
+                  )
+                  .environment(\.managedObjectContext, moc)
+                  .onDisappear(perform: {
+                     updateGrid.toggle()
+                  })
+               }
+            } else {
+               Text("No activity selected")
+            }
          }
-      } else {
-         Text("No activity selected")
+         .navigationBarTitle(activity?.name ?? "No Activity")
+         .navigationBarTitleDisplayMode(.inline)
       }
    }
 }
