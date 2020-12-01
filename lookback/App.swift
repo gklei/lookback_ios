@@ -34,16 +34,48 @@ struct lookbackApp: App {
       return container
    }()
    
+   @State var selectedActivity: Activity?
+   
    var body: some Scene {
       WindowGroup {
          TabView {
-            ActivityListView()
+            ActivityListView(selectedActivity: $selectedActivity)
                .tabItem {
                   Image(systemName: "list.dash")
                   Text("Activities")
                }
                .environment(\.managedObjectContext, persistentContainer.viewContext)
+            SelectedActivityView(selectedActivity: $selectedActivity)
+               .tabItem {
+                  Image(systemName: "square.grid.4x3.fill")
+                  Text("Grid")
+               }
+               .environment(\.managedObjectContext, persistentContainer.viewContext)
+            SettingsView()
+               .tabItem {
+                  Image(systemName: "gear")
+                  Text("Settings")
+               }
          }
       }
+   }
+}
+
+struct SelectedActivityView: View {
+   @Environment(\.managedObjectContext) var moc
+   @FetchRequest(sortDescriptors: [], animation: .default) private var activities: FetchedResults<Activity>
+   @Binding var selectedActivity: Activity?
+   
+   var body: some View {
+      NavigationView {
+         ActivityView(activity: $selectedActivity).environment(\.managedObjectContext, moc)
+            .navigationBarTitle(selectedActivity?.name ?? "No Activity")
+      }
+   }
+}
+
+struct SettingsView: View {
+   var body: some View {
+      Text("Settings")
    }
 }

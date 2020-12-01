@@ -19,7 +19,8 @@ struct ActivityGridView: UIViewControllerRepresentable {
       }
       
       func marker(at date: Date) -> Marker? {
-         return parent.activity.marker(for: date)
+         guard let activity = parent.activity else { return nil }
+         return activity.marker(for: date)
       }
       
       func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController) {
@@ -28,12 +29,14 @@ struct ActivityGridView: UIViewControllerRepresentable {
       }
       
       func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController) {
-         if let marker = parent.activity.marker(for: date) {
+         guard let activity = parent.activity else { return }
+         if let marker = activity.marker(for: date) {
             parent.moc.delete(marker)
          } else {
             parent.createMarker(on: date)
          }
          try? parent.moc.save()
+         parent.updateGrid.toggle()
       }
    }
    
@@ -42,9 +45,10 @@ struct ActivityGridView: UIViewControllerRepresentable {
    }
    
    @Environment(\.managedObjectContext) var moc
-   var activity: Activity
+   @Binding var activity: Activity?
    @Binding var selectedDate: Date?
    @Binding var showMarkerDetails: Bool
+   @Binding var updateGrid: Bool
    
    func makeUIViewController(context: Context) -> ActivityViewController {
       let vc = ActivityViewController()
@@ -58,6 +62,7 @@ struct ActivityGridView: UIViewControllerRepresentable {
    }
    
    @discardableResult func createMarker(on date: Date, with description: String = "") -> Marker? {
+      guard let activity = activity else { return nil }
       guard activity.marker(for: date) == nil else { return nil }
       let entity = NSEntityDescription.entity(forEntityName: "Marker", in: moc)
       let marker = Marker(entity: entity!, insertInto: moc)

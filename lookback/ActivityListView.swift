@@ -14,9 +14,11 @@ struct ActivityListView: View {
       animation: .default
    )
    private var activities: FetchedResults<Activity>
-   @State private var newActivity: Activity?
-   @State var activityCreated: Bool = false
+   
    @State private var editMode = EditMode.inactive
+   @State var activityCreated: Bool = false
+   @State private var newActivity: Activity?
+   @Binding var selectedActivity: Activity?
    
    private var addButton: some View {
       switch editMode {
@@ -28,16 +30,13 @@ struct ActivityListView: View {
    var body: some View {
       NavigationView {
          HStack {
-            if let activity = newActivity {
-               NavigationLink(
-                  destination: ActivityView(activity: activity, isNew: true).environment(\.managedObjectContext, moc),
-                  isActive: $activityCreated
-               ) {
-                  EmptyView()
-               }
-            }
             List {
-               ForEach(activities, content: ActivityRowView.init)
+               ForEach(activities) { activity in
+                  ActivityRowView(activity: activity, selection: selectedActivity)
+                     .onTapGesture {
+                        selectedActivity = activity
+                     }
+               }
                .onDelete(perform: onDelete)
             }
          }
