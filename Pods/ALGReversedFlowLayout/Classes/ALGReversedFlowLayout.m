@@ -36,7 +36,7 @@
 - (BOOL) shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
   if (self.expandContentSizeToBounds &&
-      fabsf(self.collectionView.bounds.size.height - newBounds.size.height) > FLT_EPSILON ) {
+      fabs(self.collectionView.bounds.size.height - newBounds.size.height) > FLT_EPSILON ) {
     return YES;
   }
   else {
@@ -74,7 +74,8 @@
 - (NSArray *) layoutAttributesForElementsInRect:(CGRect)reversedRect
 {
   CGRect const normalRect = [self normalRectForReversedRect:reversedRect];
-  NSArray * attributes = [super layoutAttributesForElementsInRect:normalRect];
+  NSArray * original = [super layoutAttributesForElementsInRect:normalRect];
+  NSArray * attributes = [[NSArray alloc] initWithArray:original copyItems:YES];
   for(UICollectionViewLayoutAttributes *attribute in attributes){
     [self modifyLayoutAttribute:attribute];
   }

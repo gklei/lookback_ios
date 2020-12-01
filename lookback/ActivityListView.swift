@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ActivityListView: View {
-   @State private var editMode = EditMode.inactive
-   @EnvironmentObject var dataLayer: DataLayer
-   
+   @Environment(\.managedObjectContext) var moc
    @FetchRequest(
       sortDescriptors: [NSSortDescriptor(keyPath: \Activity.creationDate, ascending: true)],
       animation: .default
@@ -18,6 +16,7 @@ struct ActivityListView: View {
    private var activities: FetchedResults<Activity>
    @State private var newActivity: Activity?
    @State var activityCreated: Bool = false
+   @State private var editMode = EditMode.inactive
    
    private var addButton: some View {
       switch editMode {
@@ -31,7 +30,7 @@ struct ActivityListView: View {
          HStack {
             if let activity = newActivity {
                NavigationLink(
-                  destination: ActivityView(activity: activity, dataLayer: dataLayer, isNew: true),
+                  destination: ActivityView(activity: activity, isNew: true).environment(\.managedObjectContext, moc),
                   isActive: $activityCreated
                ) {
                   EmptyView()
@@ -54,18 +53,24 @@ struct ActivityListView: View {
    
    private func onAdd() {
       withAnimation {
-         newActivity = dataLayer.createActivity()
-         dataLayer.save()
-         dataLayer.updateFetchedActivities()
+         let activity = Activity(context: moc)
+         activity.id = UUID()
+         activity.name = "New Activity"
+         activity.creationDate = Date()
+         activity.markerColorHex = ProgressColor.markerGreen.rawValue
+         try? moc.save()
+         newActivity = activity
       }
       activityCreated = true
    }
    
    private func onDelete(offsets: IndexSet) {
       withAnimation {
-         offsets.map { activities[$0] }.forEach(dataLayer.delete)
-         dataLayer.save()
-         dataLayer.updateFetchedActivities()
+         for offset in offsets {
+            let activity = activities[offset]
+            moc.delete(activity)
+         }
+         try? moc.save()
       }
       if activities.count == 0 {
          editMode = .inactive

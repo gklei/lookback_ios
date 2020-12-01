@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ActivityRowViewModel: ObservableObject {
-   @ObservedObject var activity: Activity
+   var activity: Activity
    static let dateFormatter = DateFormatter()
    
    init(activity: Activity) {
@@ -27,7 +27,7 @@ class ActivityRowViewModel: ObservableObject {
 
 struct ActivityRowView: View {
    @ObservedObject var viewModel: ActivityRowViewModel
-   @EnvironmentObject var dataLayer: DataLayer
+   @Environment(\.managedObjectContext) var moc
    
    init(activity: Activity) {
       self.viewModel = ActivityRowViewModel(activity: activity)
@@ -35,7 +35,7 @@ struct ActivityRowView: View {
    
    var body: some View {
       NavigationLink(
-         destination: ActivityView(activity: viewModel.activity, dataLayer: dataLayer)
+         destination: ActivityView(activity: viewModel.activity).environment(\.managedObjectContext, moc)
       ) {
          VStack(alignment: .leading) {
             Text(viewModel.name)

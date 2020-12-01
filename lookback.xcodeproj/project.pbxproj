@@ -64,8 +64,9 @@
 		8EA81196256C58C3004CF6A5 /* lookback.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81194256C58C3004CF6A5 /* lookback.xcdatamodeld */; };
 		8EA81199256C597B004CF6A5 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81198256C597B004CF6A5 /* DataLayer.swift */; };
 		8EA811C6256D577B004CF6A5 /* ActivityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */; };
-		8EA811D2256DA53B004CF6A5 /* TextAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811D1256DA53B004CF6A5 /* TextAlert.swift */; };
 		8EA811D5256DA634004CF6A5 /* ActivityGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811D4256DA634004CF6A5 /* ActivityGridView.swift */; };
+		8EA811D9256EB57E004CF6A5 /* TextAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811D8256EB57E004CF6A5 /* TextAlert.swift */; };
+		8EA811DC25769FC1004CF6A5 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA811DB25769FC1004CF6A5 /* MarkerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,8 +129,9 @@
 		8EA81195256C58C3004CF6A5 /* lookback.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lookback.xcdatamodel; sourceTree = "<group>"; };
 		8EA81198256C597B004CF6A5 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
 		8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRowView.swift; sourceTree = "<group>"; };
-		8EA811D1256DA53B004CF6A5 /* TextAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlert.swift; sourceTree = "<group>"; };
 		8EA811D4256DA634004CF6A5 /* ActivityGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityGridView.swift; sourceTree = "<group>"; };
+		8EA811D8256EB57E004CF6A5 /* TextAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlert.swift; sourceTree = "<group>"; };
+		8EA811DB25769FC1004CF6A5 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		9DBF3B56A8C657F1E86B48CB /* Pods-lookback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lookback.debug.xcconfig"; path = "Target Support Files/Pods-lookback/Pods-lookback.debug.xcconfig"; sourceTree = "<group>"; };
 		B6959CEB388CB710689393B2 /* Pods_lookback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lookback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,8 +179,9 @@
 				8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */,
 				8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */,
 				8EA810A9256C39BC004CF6A5 /* ActivityView.swift */,
+				8EA811DB25769FC1004CF6A5 /* MarkerView.swift */,
+				8EA811D8256EB57E004CF6A5 /* TextAlert.swift */,
 				8EA811D4256DA634004CF6A5 /* ActivityGridView.swift */,
-				8EA811D1256DA53B004CF6A5 /* TextAlert.swift */,
 				8EA8108F256C1CF1004CF6A5 /* Assets.xcassets */,
 				8EA81094256C1CF1004CF6A5 /* Info.plist */,
 				8EA81091256C1CF1004CF6A5 /* Preview Content */,
@@ -472,12 +475,13 @@
 				8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */,
 				8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */,
 				8EA811C6256D577B004CF6A5 /* ActivityRowView.swift in Sources */,
+				8EA811D9256EB57E004CF6A5 /* TextAlert.swift in Sources */,
 				8EA81102256C471B004CF6A5 /* UIImage+Extensions.swift in Sources */,
+				8EA811DC25769FC1004CF6A5 /* MarkerView.swift in Sources */,
 				8EA81196256C58C3004CF6A5 /* lookback.xcdatamodeld in Sources */,
 				8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */,
 				8EA81106256C471B004CF6A5 /* Optional+Extensions.swift in Sources */,
 				8EA81103256C471B004CF6A5 /* UISearchBar+Extensions.swift in Sources */,
-				8EA811D2256DA53B004CF6A5 /* TextAlert.swift in Sources */,
 				8EA8108C256C1CEF004CF6A5 /* App.swift in Sources */,
 				8EA810AA256C39BC004CF6A5 /* ActivityView.swift in Sources */,
 				8EA810FE256C471B004CF6A5 /* Date+Extension.swift in Sources */,

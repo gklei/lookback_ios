@@ -2,14 +2,14 @@
 //  TextAlert.swift
 //  lookback
 //
-//  Created by Gregory Klein on 11/24/20.
+//  Created by Gregory Klein on 11/25/20.
 //
-
+import UIKit
 import SwiftUI
 
 extension UIAlertController {
    convenience init(alert: TextAlert) {
-      self.init(title: alert.title, message: nil, preferredStyle: .alert)
+      self.init(title: alert.title, message: alert.message, preferredStyle: .alert)
       addTextField { $0.placeholder = alert.placeholder }
       addAction(UIAlertAction(title: alert.cancel, style: .cancel) { _ in
          alert.action(nil)
@@ -51,7 +51,10 @@ struct AlertWrapper<Content: View>: UIViewControllerRepresentable {
             self.alert.action($0)
          }
          context.coordinator.alertController = UIAlertController(alert: alert)
-         uiViewController.present(context.coordinator.alertController!, animated: true)
+         
+         DispatchQueue.main.async {
+            uiViewController.present(context.coordinator.alertController!, animated: true)
+         }
       }
       if !isPresented && uiViewController.presentedViewController == context.coordinator.alertController {
          uiViewController.dismiss(animated: true)
@@ -61,6 +64,7 @@ struct AlertWrapper<Content: View>: UIViewControllerRepresentable {
 
 public struct TextAlert {
    public var title: String
+   public var message: String
    public var placeholder: String = ""
    public var accept: String = "OK"
    public var cancel: String = "Cancel"

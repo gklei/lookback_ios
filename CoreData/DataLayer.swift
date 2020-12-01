@@ -93,6 +93,7 @@ class DataLayer: ObservableObject {
       let entity = NSEntityDescription.entity(forEntityName: "Activity", in: context)
       let newActivity = NSManagedObject(entity: entity!, insertInto: context)
       
+      newActivity.setValue(UUID(), forKey: "id")
       newActivity.setValue(name, forKey: "name")
       newActivity.setValue(Date(), forKey: "creationDate")
       newActivity.setValue(ProgressColor.markerGreen.rawValue, forKey: "markerColorHex")
@@ -130,6 +131,7 @@ class DataLayer: ObservableObject {
       let entity = NSEntityDescription.entity(forEntityName: "Marker", in: context)
       let newMarker = NSManagedObject(entity: entity!, insertInto: context)
       
+      newMarker.setValue(UUID(), forKey: "id")
       newMarker.setValue(date, forKey: "date")
       newMarker.setValue(date.timeIntervalSince1970, forKey: "epoch")
       newMarker.setValue(TimeZone.autoupdatingCurrent.identifier, forKey: "timeZoneID")
