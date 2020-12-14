@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ActivityListView: View {
+   @EnvironmentObject var userSettings: UserSettings
    @Environment(\.managedObjectContext) var moc
    @FetchRequest(
       sortDescriptors: [NSSortDescriptor(keyPath: \Activity.creationDate, ascending: true)],
@@ -16,9 +17,9 @@ struct ActivityListView: View {
    private var activities: FetchedResults<Activity>
    
    @State private var editMode = EditMode.inactive
-   @State var activityCreated: Bool = false
-   @State private var newActivity: Activity?
+
    @Binding var selectedActivity: Activity?
+   @State var settingsActivity: Activity?
    
    private var addButton: some View {
       switch editMode {
@@ -39,7 +40,7 @@ struct ActivityListView: View {
                            selectedActivity = activity
                         }
                      Button(action: {
-                        print("Edit activity: \(activity.name)")
+                        settingsActivity = activity
                      }) {
                         Image(systemName: "pencil")
                            .foregroundColor(.blue)
@@ -49,6 +50,11 @@ struct ActivityListView: View {
                }
                .onDelete(perform: onDelete)
             }
+         }
+         .sheet(item: $settingsActivity) { activity in
+            ActivitySettingsView(activity: activity)
+               .environmentObject(userSettings)
+               .environment(\.managedObjectContext, moc)
          }
          .navigationBarTitle("Activities")
          .navigationBarItems(
@@ -68,9 +74,8 @@ struct ActivityListView: View {
          activity.creationDate = Date()
          activity.markerColorHex = ProgressColor.markerGreen.rawValue
          try? moc.save()
-         newActivity = activity
+         settingsActivity = activity
       }
-      activityCreated = true
    }
    
    private func onDelete(offsets: IndexSet) {

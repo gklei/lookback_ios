@@ -45,6 +45,7 @@ struct lookbackApp: App {
                   Image(systemName: "list.dash")
                   Text("Activities")
                }
+               .environmentObject(userSettings)
                .environment(\.managedObjectContext, persistentContainer.viewContext)
             ActivityView(activity: $selectedActivity)
                .tabItem {
