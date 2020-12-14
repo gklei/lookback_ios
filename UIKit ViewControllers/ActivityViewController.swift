@@ -78,7 +78,6 @@ class ActivityViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      view.backgroundColor = .white
    }
    
    // Enable detection of shake motion

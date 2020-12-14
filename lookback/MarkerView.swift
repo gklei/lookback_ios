@@ -11,6 +11,8 @@ import CoreData
 struct MarkerView: View {
    @Environment(\.managedObjectContext) var moc
    @Environment(\.presentationMode) var presentationMode
+   @EnvironmentObject var userSettings: UserSettings
+   
    let activity: Activity
    let date: Date
    @Binding var markerText: String
@@ -46,6 +48,7 @@ struct MarkerView: View {
                presentationMode.wrappedValue.dismiss()
          })
       }
+      .environment(\.colorScheme, userSettings.selectedColorScheme)
       .onAppear(perform: {
          if let marker = activity.marker(for: date) {
             markerText = marker.descriptionText ?? ""

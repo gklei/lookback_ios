@@ -11,6 +11,8 @@ import CoreData
 
 struct ActivityView: View {
    @Environment(\.managedObjectContext) var moc
+   @EnvironmentObject var userSettings: UserSettings
+   
    @State private var showNameAlert: Bool = false
    @State private var updateGrid: Bool = false
    @State private var selectedDate: Date?
@@ -36,6 +38,7 @@ struct ActivityView: View {
                   showMarkerDetails: $showMarkerDetails,
                   updateGrid: $updateGrid
                )
+               .environmentObject(userSettings)
                .environment(\.managedObjectContext, moc)
                .sheet(isPresented: $showMarkerDetails) {
                   MarkerView(
@@ -43,6 +46,7 @@ struct ActivityView: View {
                      date: selectedDate!,
                      markerText: $markerText
                   )
+                  .environmentObject(userSettings)
                   .environment(\.managedObjectContext, moc)
                   .onDisappear(perform: {
                      updateGrid.toggle()

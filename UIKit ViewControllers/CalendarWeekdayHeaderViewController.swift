@@ -64,7 +64,6 @@ class CalendarWeekdayHeaderViewController: UIViewController {
    
    override func loadView() {
       let view = UIView()
-      view.backgroundColor = UIColor(.white)
       
       let layout = UICollectionViewFlowLayout()
       _cv = UICollectionView(frame: .zero, collectionViewLayout: layout)

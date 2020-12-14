@@ -45,6 +45,8 @@ struct ActivityGridView: UIViewControllerRepresentable {
    }
    
    @Environment(\.managedObjectContext) var moc
+   @EnvironmentObject var userSettings: UserSettings
+   
    @Binding var activity: Activity?
    @Binding var selectedDate: Date?
    @Binding var showMarkerDetails: Bool

@@ -51,6 +51,7 @@ struct lookbackApp: App {
                   Image(systemName: "square.grid.4x3.fill")
                   Text("Grid")
                }
+               .environmentObject(userSettings)
                .environment(\.managedObjectContext, persistentContainer.viewContext)
             SettingsView()
                .environmentObject(userSettings)

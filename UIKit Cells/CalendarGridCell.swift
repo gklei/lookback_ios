@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol CalendarGridCellDelegate: class {
    func cellDoubleTapped(cell: CalendarGridCell)
@@ -214,12 +215,12 @@ extension CalendarGridCell {
          case 1:
             switch marker {
             case .some(let m): return _streakColor(for: m, index: streakIndex)
-            case .none: return UIColor(.chalkboard, alpha: 0.15)
+            case .none: return UIColor(Color("FirstOfMonthTile"))
             }
          default:
             switch marker {
             case .some(let m): return _streakColor(for: m, index: streakIndex)
-            case .none: return UIColor(.tileGray)
+            case .none: return UIColor(Color("TileGray"))
             }
          }
       }
