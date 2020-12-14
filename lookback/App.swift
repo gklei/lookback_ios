@@ -35,6 +35,7 @@ struct lookbackApp: App {
    }()
    
    @State var selectedActivity: Activity?
+   @ObservedObject var userSettings = UserSettings()
    
    var body: some Scene {
       WindowGroup {
@@ -52,17 +53,13 @@ struct lookbackApp: App {
                }
                .environment(\.managedObjectContext, persistentContainer.viewContext)
             SettingsView()
+               .environmentObject(userSettings)
                .tabItem {
                   Image(systemName: "gear")
                   Text("Settings")
                }
          }
+         .environment(\.colorScheme, userSettings.selectedColorScheme)
       }
-   }
-}
-
-struct SettingsView: View {
-   var body: some View {
-      Text("Settings")
    }
 }
