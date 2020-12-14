@@ -54,11 +54,11 @@ struct lookbackApp: App {
                .environmentObject(userSettings)
                .environment(\.managedObjectContext, persistentContainer.viewContext)
             SettingsView()
-               .environmentObject(userSettings)
                .tabItem {
                   Image(systemName: "gear")
                   Text("Settings")
                }
+               .environmentObject(userSettings)
          }
          .environment(\.colorScheme, userSettings.selectedColorScheme)
       }
