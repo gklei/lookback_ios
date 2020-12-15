@@ -76,7 +76,7 @@ struct ActivityListView: View {
          activity.id = UUID()
          activity.name = "New Activity"
          activity.creationDate = Date()
-         activity.markerColorHex = ProgressColor.markerGreen.rawValue
+         activity.markerColorHex = userSettings.defaultActivityColor.rawValue
          try? moc.save()
          settingsActivity = activity
       }

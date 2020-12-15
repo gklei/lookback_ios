@@ -55,6 +55,19 @@ enum ProgressColor: String {
       default: return .white
       }
    }
+   
+   static var markerColors: [ProgressColor] {
+      return [
+         .markerRed,
+         .markerOrange,
+         .markerYellow,
+         .markerGreen,
+         .markerBlue,
+         .markerIndigo,
+         .markerViolet,
+         .markerGray
+      ]
+   }
 }
 
 extension UIColor {

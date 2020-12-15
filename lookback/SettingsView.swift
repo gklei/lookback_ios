@@ -13,13 +13,20 @@ struct SettingsView: View {
    var body: some View {
       NavigationView {
          Form {
-            Section(header: Text("Color Theme")) {
-               Picker(selection: $userSettings.colorThemeIndex, label: Text("Choose a color theme")) {
-                  ForEach(0 ..< userSettings.colorSchemes.count) {
-                     Text(userSettings.colorSchemes[$0].name)
-                  }
+            Section {
+               HStack {
+                  Text("Dark Mode")
+                     .foregroundColor(.secondary)
+                  Spacer()
+                  Toggle("", isOn: $userSettings.darkMode)
                }
                .pickerStyle(SegmentedPickerStyle())
+               
+               ColorPicker(
+                  text: "Default Activity Color",
+                  selectedColor: $userSettings.defaultActivityColorIndex,
+                  colors: ProgressColor.markerColors
+               )
             }
          }
          .navigationBarTitle("Settings")

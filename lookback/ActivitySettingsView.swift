@@ -7,26 +7,32 @@
 
 import SwiftUI
 
+struct ColorPicker: View {
+   let text: String
+   @Binding var selectedColor: Int
+   var colors: [ProgressColor]
+   
+   var body: some View {
+      Picker(
+         selection: $selectedColor,
+         label: Text(text).foregroundColor(.secondary)
+      ) {
+         ForEach(0 ..< colors.count) {
+            Text(self.colors[$0].colorName)
+               .bold()
+               .foregroundColor(Color(UIColor(colors[$0])))
+         }
+      }
+   }
+}
+
 struct ActivitySettingsView: View {
    @EnvironmentObject var userSettings: UserSettings
    @Environment(\.managedObjectContext) var moc
    @Environment(\.presentationMode) var presentationMode
    
    @State private var activityName: String = ""
-   
    @State var selectedColor = 0
-   var colors: [ProgressColor] {
-      return [
-         .markerRed,
-         .markerOrange,
-         .markerYellow,
-         .markerGreen,
-         .markerBlue,
-         .markerIndigo,
-         .markerViolet,
-         .markerGray
-      ]
-   }
    
    let activity: Activity
    
@@ -41,16 +47,11 @@ struct ActivitySettingsView: View {
                   TextField("", text: $activityName)
                      .multilineTextAlignment(.trailing)
                }
-               Picker(
-                  selection: $selectedColor,
-                  label: Text("Marker Color").foregroundColor(.secondary)
-               ) {
-                  ForEach(0 ..< colors.count) {
-                     Text(self.colors[$0].colorName)
-                        .bold()
-                        .foregroundColor(Color(UIColor(colors[$0])))
-                  }
-               }
+               ColorPicker(
+                  text: "Color",
+                  selectedColor: $selectedColor,
+                  colors: ProgressColor.markerColors
+               )
             }
          }
          .navigationBarTitle("Activity Settings")
@@ -61,7 +62,7 @@ struct ActivitySettingsView: View {
                if !activityName.trimmed.isEmpty {
                   activity.name = activityName.trimmed
                }
-               let color = colors[selectedColor]
+               let color = ProgressColor.markerColors[selectedColor]
                activity.markerColorHex = color.rawValue
                try? moc.save()
                _dismiss()
@@ -71,7 +72,7 @@ struct ActivitySettingsView: View {
          activityName = activity.name!
          
          let color = ProgressColor(rawValue: activity.markerColorHex!)!
-         selectedColor = colors.indexes(of: color).first ?? 0
+         selectedColor = ProgressColor.markerColors.indexes(of: color).first ?? 0
       }
       .environment(\.colorScheme, userSettings.selectedColorScheme)
    }
