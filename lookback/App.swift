@@ -61,7 +61,7 @@ struct lookbackApp: App {
                }
                .environmentObject(userSettings)
          }
-         .environment(\.colorScheme, userSettings.selectedColorScheme)
+         .preferredColorScheme(userSettings.selectedColorScheme)
       }
    }
 }
