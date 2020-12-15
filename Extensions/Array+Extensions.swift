@@ -1,38 +1,38 @@
 import Foundation
 
 extension Array {
-    
+
     @discardableResult
     mutating func append(_ newArray: Array) -> CountableRange<Int> {
         let range = count..<(count + newArray.count)
         self += newArray
         return range
     }
-    
+
     @discardableResult
     mutating func insert(_ newArray: Array, at index: Int) -> CountableRange<Int> {
         let mIndex = Swift.max(0, index)
         let start = Swift.min(count, mIndex)
         let end = start + newArray.count
-        
+
         let left = self[0..<start]
         let right = self[start..<count]
         self = left + newArray + right
         return start..<end
     }
-    
+
     mutating func remove<T: AnyObject> (_ element: T) {
         let anotherSelf = self
-        
+
         removeAll(keepingCapacity: true)
-        
+
         anotherSelf.each { (index: Int, current: Element) in
             if (current as! T) !== element {
                 self.append(current)
             }
         }
     }
-    
+
     func each(_ exe: (Int, Element) -> ()) {
         for (index, item) in enumerated() {
             exe(index, item)
@@ -41,7 +41,7 @@ extension Array {
 }
 
 extension Array where Element: Equatable {
-    
+
     /// Remove Dublicates
     var unique: [Element] {
         // Thanks to https://github.com/sairamkotha for improving the method
@@ -64,7 +64,7 @@ extension Array where Element: Equatable {
 		}
 		return found
 	}
-	
+
 	/// All indexes of specified item.
 	///
 	/// - Parameter item: item to check.
@@ -78,14 +78,14 @@ extension Array where Element: Equatable {
 		}
 		return indexes
 	}
-	
+
 	/// Remove all instances of an item from array.
 	///
 	/// - Parameter item: item to remove.
 	public mutating func removeAll(_ item: Element) {
 		self = self.filter { $0 != item }
 	}
-    
+
     /// Creates an array of elements split into groups the length of size.
     /// If array can’t be split evenly, the final chunk will be the remaining elements.
     ///
@@ -107,14 +107,14 @@ extension Array where Element: Equatable {
 }
 
 public extension Array {
-    
+
     /// Random item from array.
    var randomItem: Element? {
         if self.isEmpty { return nil }
         let index = Int(arc4random_uniform(UInt32(count)))
         return self[index]
     }
-    
+
     /// Shuffled version of array.
    var shuffled: [Element] {
         var arr = self
@@ -123,7 +123,7 @@ public extension Array {
         }
         return arr
     }
-    
+
     /// Shuffle array.
    mutating func shuffle() {
         // https://gist.github.com/ijoshsmith/5e3c7d8c2099a3fe8dc3
