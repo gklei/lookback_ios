@@ -35,6 +35,20 @@ enum ProgressColor: String {
       }
    }
    
+   var colorName: String {
+      switch self {
+      case .markerRed: return "Red"
+      case .markerOrange: return "Orange"
+      case .markerYellow: return "Yellow"
+      case .markerGreen: return "Green"
+      case .markerBlue: return "Blue"
+      case .markerIndigo: return "Indigo"
+      case .markerViolet: return "Violet"
+      case .markerGray: return "Gray"
+      default: return hex
+      }
+   }
+   
    var labelTextColor: UIColor {
       switch self {
       case .markerYellow, .markerGreen: return UIColor(.outerSpace, alpha: 0.2)
