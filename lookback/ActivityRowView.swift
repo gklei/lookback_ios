@@ -40,9 +40,9 @@ class ActivityRowViewModel: ObservableObject {
       return activity.id == selection.id
    }
    
-   var color: UIColor {
+   var color: Color {
       let progressColor = ProgressColor(rawValue: activity.markerColorHex!)!
-      return UIColor(progressColor)
+      return Color(UIColor(progressColor))
    }
 }
 
@@ -57,7 +57,7 @@ struct ActivityRowView: View {
    var body: some View {
       HStack {
          Image(systemName: viewModel.isSelected ? "circle.fill" : "circle")
-            .foregroundColor(Color(viewModel.color))
+            .foregroundColor(viewModel.color)
             .padding(.trailing, 8)
          VStack(alignment: .leading, spacing: 4) {
             Text(viewModel.name)

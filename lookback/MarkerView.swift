@@ -17,6 +17,12 @@ struct MarkerView: View {
    let date: Date
    @Binding var markerText: String
    
+   var navigationTitle: String {
+      let df = DateFormatter()
+      df.dateStyle = .medium
+      return df.string(from: date)
+   }
+   
    var body: some View {
       NavigationView {
          ZStack(alignment: .topLeading) {
@@ -32,7 +38,7 @@ struct MarkerView: View {
                .font(.title2)
                .padding()
          }
-         .navigationBarTitle("Details")
+         .navigationBarTitle(navigationTitle)
          .navigationBarTitleDisplayMode(.inline)
          .navigationBarItems(
             leading: Button("Cancel") {
