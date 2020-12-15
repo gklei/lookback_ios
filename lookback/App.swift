@@ -50,7 +50,7 @@ struct lookbackApp: App {
             ActivityView(activity: $selectedActivity)
                .tabItem {
                   Image(systemName: "square.grid.4x3.fill")
-                  Text("Grid")
+                  Text("Calendar")
                }
                .environmentObject(userSettings)
                .environment(\.managedObjectContext, persistentContainer.viewContext)
