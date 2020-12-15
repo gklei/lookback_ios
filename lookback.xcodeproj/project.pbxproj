@@ -41,14 +41,6 @@
 		8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */; };
 		8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */; };
 		8EA8114F256C4A6B004CF6A5 /* ColorGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */; };
-		8EA81167256C4AF2004CF6A5 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8115C256C4AF2004CF6A5 /* AnimationType.swift */; };
-		8EA81168256C4AF2004CF6A5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8115D256C4AF2004CF6A5 /* Direction.swift */; };
-		8EA81169256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8115F256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift */; };
-		8EA8116A256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81160256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift */; };
-		8EA8116B256C4AF2004CF6A5 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81162256C4AF2004CF6A5 /* Utilities.swift */; };
-		8EA8116C256C4AF2004CF6A5 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81163256C4AF2004CF6A5 /* ViewAnimatorConfig.swift */; };
-		8EA8116D256C4AF2004CF6A5 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81164256C4AF2004CF6A5 /* ViewAnimator.swift */; };
-		8EA8116E256C4AF2004CF6A5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81166256C4AF2004CF6A5 /* Animation.swift */; };
 		8EA8117E256C4B33004CF6A5 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81171256C4B33004CF6A5 /* Gotham-XLight.otf */; };
 		8EA8117F256C4B33004CF6A5 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81172256C4B33004CF6A5 /* Gotham-Black.otf */; };
 		8EA81180256C4B33004CF6A5 /* Gotham-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81173256C4B33004CF6A5 /* Gotham-XLightItalic.otf */; };
@@ -107,14 +99,6 @@
 		8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridViewController.swift; sourceTree = "<group>"; };
 		8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridViewController.swift; sourceTree = "<group>"; };
-		8EA8115C256C4AF2004CF6A5 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
-		8EA8115D256C4AF2004CF6A5 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		8EA8115F256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
-		8EA81160256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
-		8EA81162256C4AF2004CF6A5 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		8EA81163256C4AF2004CF6A5 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimatorConfig.swift; sourceTree = "<group>"; };
-		8EA81164256C4AF2004CF6A5 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
-		8EA81166256C4AF2004CF6A5 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		8EA81171256C4B33004CF6A5 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
 		8EA81172256C4B33004CF6A5 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
 		8EA81173256C4B33004CF6A5 /* Gotham-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLightItalic.otf"; sourceTree = "<group>"; };
@@ -153,7 +137,6 @@
 				8EA81170256C4B33004CF6A5 /* Resources */,
 				8EA8113E256C4A6B004CF6A5 /* UIKit ViewControllers */,
 				8EA8111E256C4869004CF6A5 /* UIKit Cells */,
-				8EA8115A256C4AF2004CF6A5 /* ViewAnimator */,
 				8EA81192256C58A8004CF6A5 /* CoreData */,
 				8EA810D6256C471B004CF6A5 /* Extensions */,
 				8EA8108A256C1CEF004CF6A5 /* lookback */,
@@ -242,53 +225,6 @@
 				8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */,
 			);
 			path = "UIKit ViewControllers";
-			sourceTree = "<group>";
-		};
-		8EA8115A256C4AF2004CF6A5 /* ViewAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				8EA8115B256C4AF2004CF6A5 /* Models */,
-				8EA8115E256C4AF2004CF6A5 /* Extensions */,
-				8EA81161256C4AF2004CF6A5 /* Utilities */,
-				8EA81163256C4AF2004CF6A5 /* ViewAnimatorConfig.swift */,
-				8EA81164256C4AF2004CF6A5 /* ViewAnimator.swift */,
-				8EA81165256C4AF2004CF6A5 /* Protocols */,
-			);
-			path = ViewAnimator;
-			sourceTree = "<group>";
-		};
-		8EA8115B256C4AF2004CF6A5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				8EA8115C256C4AF2004CF6A5 /* AnimationType.swift */,
-				8EA8115D256C4AF2004CF6A5 /* Direction.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		8EA8115E256C4AF2004CF6A5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8EA8115F256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift */,
-				8EA81160256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		8EA81161256C4AF2004CF6A5 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				8EA81162256C4AF2004CF6A5 /* Utilities.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		8EA81165256C4AF2004CF6A5 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				8EA81166256C4AF2004CF6A5 /* Animation.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8EA81170256C4B33004CF6A5 /* Resources */ = {
@@ -408,7 +344,6 @@
 				8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */,
 				8EA81124256C4869004CF6A5 /* CalendarGridCell.swift in Sources */,
 				8EA810FD256C471B004CF6A5 /* UIView+Extensions.swift in Sources */,
-				8EA8116B256C4AF2004CF6A5 /* Utilities.swift in Sources */,
 				8EA81122256C4869004CF6A5 /* CalendarGridFooter.swift in Sources */,
 				8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */,
 				8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */,
@@ -425,24 +360,17 @@
 				8EA8108C256C1CEF004CF6A5 /* App.swift in Sources */,
 				8EA810AA256C39BC004CF6A5 /* ActivityView.swift in Sources */,
 				8EA810FE256C471B004CF6A5 /* Date+Extension.swift in Sources */,
-				8EA81167256C4AF2004CF6A5 /* AnimationType.swift in Sources */,
 				8EA81199256C597B004CF6A5 /* DataLayer.swift in Sources */,
-				8EA81168256C4AF2004CF6A5 /* Direction.swift in Sources */,
 				8EA811D5256DA634004CF6A5 /* ActivityGridView.swift in Sources */,
 				8EA81139256C487D004CF6A5 /* UIView+Lookback.swift in Sources */,
 				8EA81138256C487D004CF6A5 /* UIColor+Lookback.swift in Sources */,
 				8EA81101256C471B004CF6A5 /* UIColor+Extensions.swift in Sources */,
 				8EA81137256C487D004CF6A5 /* UIViewController+Lookback.swift in Sources */,
-				8EA8116C256C4AF2004CF6A5 /* ViewAnimatorConfig.swift in Sources */,
-				8EA8116E256C4AF2004CF6A5 /* Animation.swift in Sources */,
 				8EA81188256C4B33004CF6A5 /* BobRoss.swift in Sources */,
 				8EA81108256C471B004CF6A5 /* UITextField+Extensions.swift in Sources */,
-				8EA8116A256C4AF2004CF6A5 /* UICollectionView + ViewAnimator.swift in Sources */,
-				8EA8116D256C4AF2004CF6A5 /* ViewAnimator.swift in Sources */,
 				8EA81131256C487D004CF6A5 /* UIButton+Lookback.swift in Sources */,
 				8EA810FA256C471B004CF6A5 /* Array+Extensions.swift in Sources */,
 				8EA81132256C487D004CF6A5 /* UIBarButtonItem+Lookback.swift in Sources */,
-				8EA81169256C4AF2004CF6A5 /* UITableView + ViewAnimator.swift in Sources */,
 				8EA81133256C487D004CF6A5 /* String+Lookback.swift in Sources */,
 				8EA81134256C487D004CF6A5 /* UILabel+Lookback.swift in Sources */,
 				8EA8114F256C4A6B004CF6A5 /* ColorGridViewController.swift in Sources */,

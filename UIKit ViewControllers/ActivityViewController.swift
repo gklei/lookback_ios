@@ -96,23 +96,6 @@ class ActivityViewController: UIViewController {
       _calendarGrid.animateDays(duration: duration)
    }
    
-   func animateCalendar(duration: TimeInterval, delay: TimeInterval, leftToRight: Bool = true) {
-      DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-         let fromAnimation = AnimationType.from(direction: .top, offset: 30.0)
-         let zoomAnimation = AnimationType.zoom(scale: 0.2)
-         let cells = self._calendarGrid.collectionView.orderedVisibleCells
-         
-         self._calendarGrid.collectionView.isScrollEnabled = false
-         UIView.animate(views: leftToRight ? cells : cells.reversed(),
-                        animations: [fromAnimation, zoomAnimation],
-                        delay: 0,
-                        animationInterval: 0,
-                        duration: duration) {
-                           self._calendarGrid.collectionView.isScrollEnabled = true
-         }
-      }
-   }
-   
    func showBobRossQuote(duration: TimeInterval) {
       _bobRossQuoteLabel.text = BobRossQuoteGenerator().random()
       UIView.animate(withDuration: duration) {
