@@ -20,8 +20,6 @@
 		8EA810FE256C471B004CF6A5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA810DB256C471B004CF6A5 /* Date+Extension.swift */; };
 		8EA81101256C471B004CF6A5 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA810DE256C471B004CF6A5 /* UIColor+Extensions.swift */; };
 		8EA81107256C471B004CF6A5 /* Common+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA810E4256C471B004CF6A5 /* Common+Extensions.swift */; };
-		8EA81122256C4869004CF6A5 /* CalendarGridFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8111F256C4869004CF6A5 /* CalendarGridFooter.swift */; };
-		8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81120256C4869004CF6A5 /* ColorGridCell.swift */; };
 		8EA81124256C4869004CF6A5 /* CalendarGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81121256C4869004CF6A5 /* CalendarGridCell.swift */; };
 		8EA81133256C487D004CF6A5 /* String+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81128256C487C004CF6A5 /* String+Lookback.swift */; };
 		8EA81138256C487D004CF6A5 /* UIColor+Lookback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8112D256C487C004CF6A5 /* UIColor+Lookback.swift */; };
@@ -29,7 +27,6 @@
 		8EA81149256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8113F256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift */; };
 		8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */; };
 		8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */; };
-		8EA8114F256C4A6B004CF6A5 /* ColorGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */; };
 		8EA8117E256C4B33004CF6A5 /* Gotham-XLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81171256C4B33004CF6A5 /* Gotham-XLight.otf */; };
 		8EA8117F256C4B33004CF6A5 /* Gotham-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81172256C4B33004CF6A5 /* Gotham-Black.otf */; };
 		8EA81180256C4B33004CF6A5 /* Gotham-XLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8EA81173256C4B33004CF6A5 /* Gotham-XLightItalic.otf */; };
@@ -67,8 +64,6 @@
 		8EA810DB256C471B004CF6A5 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8EA810DE256C471B004CF6A5 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		8EA810E4256C471B004CF6A5 /* Common+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Common+Extensions.swift"; sourceTree = "<group>"; };
-		8EA8111F256C4869004CF6A5 /* CalendarGridFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridFooter.swift; sourceTree = "<group>"; };
-		8EA81120256C4869004CF6A5 /* ColorGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridCell.swift; sourceTree = "<group>"; };
 		8EA81121256C4869004CF6A5 /* CalendarGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridCell.swift; sourceTree = "<group>"; };
 		8EA81128256C487C004CF6A5 /* String+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lookback.swift"; sourceTree = "<group>"; };
 		8EA8112D256C487C004CF6A5 /* UIColor+Lookback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Lookback.swift"; sourceTree = "<group>"; };
@@ -76,7 +71,6 @@
 		8EA8113F256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarWeekdayHeaderViewController.swift; sourceTree = "<group>"; };
 		8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarGridViewController.swift; sourceTree = "<group>"; };
 		8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
-		8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGridViewController.swift; sourceTree = "<group>"; };
 		8EA81171256C4B33004CF6A5 /* Gotham-XLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLight.otf"; sourceTree = "<group>"; };
 		8EA81172256C4B33004CF6A5 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.otf"; sourceTree = "<group>"; };
 		8EA81173256C4B33004CF6A5 /* Gotham-XLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-XLightItalic.otf"; sourceTree = "<group>"; };
@@ -176,8 +170,6 @@
 		8EA8111E256C4869004CF6A5 /* UIKit Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8EA8111F256C4869004CF6A5 /* CalendarGridFooter.swift */,
-				8EA81120256C4869004CF6A5 /* ColorGridCell.swift */,
 				8EA81121256C4869004CF6A5 /* CalendarGridCell.swift */,
 			);
 			path = "UIKit Cells";
@@ -189,7 +181,6 @@
 				8EA8113F256C4A6B004CF6A5 /* CalendarWeekdayHeaderViewController.swift */,
 				8EA81142256C4A6B004CF6A5 /* CalendarGridViewController.swift */,
 				8EA81143256C4A6B004CF6A5 /* ActivityViewController.swift */,
-				8EA81145256C4A6B004CF6A5 /* ColorGridViewController.swift */,
 			);
 			path = "UIKit ViewControllers";
 			sourceTree = "<group>";
@@ -310,8 +301,6 @@
 				8EA8113B256C487D004CF6A5 /* UIFont+Lookback.swift in Sources */,
 				8EA8114D256C4A6B004CF6A5 /* ActivityViewController.swift in Sources */,
 				8EA81124256C4869004CF6A5 /* CalendarGridCell.swift in Sources */,
-				8EA81122256C4869004CF6A5 /* CalendarGridFooter.swift in Sources */,
-				8EA81123256C4869004CF6A5 /* ColorGridCell.swift in Sources */,
 				8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */,
 				8EA811C6256D577B004CF6A5 /* ActivityRowView.swift in Sources */,
 				8EA811D9256EB57E004CF6A5 /* TextAlert.swift in Sources */,
@@ -330,7 +319,6 @@
 				8EA81188256C4B33004CF6A5 /* BobRoss.swift in Sources */,
 				8EA810FA256C471B004CF6A5 /* Array+Extensions.swift in Sources */,
 				8EA81133256C487D004CF6A5 /* String+Lookback.swift in Sources */,
-				8EA8114F256C4A6B004CF6A5 /* ColorGridViewController.swift in Sources */,
 				8EA81107256C471B004CF6A5 /* Common+Extensions.swift in Sources */,
 				8E06242B2587F67A00FBC033 /* ActivitySettingsView.swift in Sources */,
 			);
