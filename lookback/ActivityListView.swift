@@ -43,7 +43,11 @@ struct ActivityListView: View {
                         settingsActivity = activity
                      }) {
                         Image(systemName: "pencil")
+                           .frame(width: 25, height: 25)
+                           .padding(2)
                            .foregroundColor(.blue)
+                           .background(Color(white: 0.5, opacity: 0.15))
+                           .clipShape(Circle())
                      }
                   }
                   .buttonStyle(PlainButtonStyle())
