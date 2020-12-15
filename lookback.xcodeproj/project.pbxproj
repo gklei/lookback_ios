@@ -10,6 +10,7 @@
 		0DB5A7F3E9090F6D10ABD569 /* Pods_lookback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6959CEB388CB710689393B2 /* Pods_lookback.framework */; };
 		8E0624282587E64E00FBC033 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0624272587E64E00FBC033 /* UserSettings.swift */; };
 		8E06242B2587F67A00FBC033 /* ActivitySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E06242A2587F67A00FBC033 /* ActivitySettingsView.swift */; };
+		8E06242E2588537200FBC033 /* ReversedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E06242D2588537200FBC033 /* ReversedFlowLayout.swift */; };
 		8E426CDF2583E6A000B308A2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E426CDE2583E6A000B308A2 /* SettingsView.swift */; };
 		8EA8108C256C1CEF004CF6A5 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8108B256C1CEF004CF6A5 /* App.swift */; };
 		8EA8108E256C1CEF004CF6A5 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */; };
@@ -76,6 +77,7 @@
 		2651143FD1F4D50B1A9C8453 /* Pods-lookback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lookback.release.xcconfig"; path = "Target Support Files/Pods-lookback/Pods-lookback.release.xcconfig"; sourceTree = "<group>"; };
 		8E0624272587E64E00FBC033 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		8E06242A2587F67A00FBC033 /* ActivitySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySettingsView.swift; sourceTree = "<group>"; };
+		8E06242D2588537200FBC033 /* ReversedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedFlowLayout.swift; sourceTree = "<group>"; };
 		8E426CDE2583E6A000B308A2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8EA81088256C1CEF004CF6A5 /* lookback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lookback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA8108B256C1CEF004CF6A5 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA8108B256C1CEF004CF6A5 /* App.swift */,
+				8E06242D2588537200FBC033 /* ReversedFlowLayout.swift */,
 				8E0624272587E64E00FBC033 /* UserSettings.swift */,
 				8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */,
 				8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */,
@@ -488,6 +491,7 @@
 				8EA811D9256EB57E004CF6A5 /* TextAlert.swift in Sources */,
 				8EA81102256C471B004CF6A5 /* UIImage+Extensions.swift in Sources */,
 				8EA811DC25769FC1004CF6A5 /* MarkerView.swift in Sources */,
+				8E06242E2588537200FBC033 /* ReversedFlowLayout.swift in Sources */,
 				8EA81196256C58C3004CF6A5 /* lookback.xcdatamodeld in Sources */,
 				8EA8114C256C4A6B004CF6A5 /* CalendarGridViewController.swift in Sources */,
 				8EA81106256C471B004CF6A5 /* Optional+Extensions.swift in Sources */,

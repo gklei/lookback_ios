@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ALGReversedFlowLayout
 
 protocol CalendarGridViewControllerDataSource: class {
    var calendar: Calendar { get }
@@ -58,7 +57,7 @@ class CalendarGridViewController : UIViewController {
    override func loadView() {
       let view = UIView()
       
-      let layout = ALGReversedFlowLayout()
+      let layout = ReversedFlowLayout()
       _cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
       _cv.dataSource = self
       _cv.delegate = self
