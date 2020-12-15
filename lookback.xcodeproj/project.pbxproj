@@ -107,10 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				8EA81170256C4B33004CF6A5 /* Resources */,
+				8EA810D6256C471B004CF6A5 /* Extensions */,
 				8EA8113E256C4A6B004CF6A5 /* UIKit ViewControllers */,
 				8EA8111E256C4869004CF6A5 /* UIKit Cells */,
 				8EA81192256C58A8004CF6A5 /* CoreData */,
-				8EA810D6256C471B004CF6A5 /* Extensions */,
 				8EA8108A256C1CEF004CF6A5 /* lookback */,
 				8EA81089256C1CEF004CF6A5 /* Products */,
 			);
@@ -128,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				8EA8108B256C1CEF004CF6A5 /* App.swift */,
-				8E06242D2588537200FBC033 /* ReversedFlowLayout.swift */,
 				8E0624272587E64E00FBC033 /* UserSettings.swift */,
 				8EA8108D256C1CEF004CF6A5 /* ActivityListView.swift */,
 				8EA811C5256D577B004CF6A5 /* ActivityRowView.swift */,
@@ -138,6 +137,7 @@
 				8EA811DB25769FC1004CF6A5 /* MarkerView.swift */,
 				8E426CDE2583E6A000B308A2 /* SettingsView.swift */,
 				8EA811D8256EB57E004CF6A5 /* TextAlert.swift */,
+				8E06242D2588537200FBC033 /* ReversedFlowLayout.swift */,
 				8EA8108F256C1CF1004CF6A5 /* Assets.xcassets */,
 				8EA81094256C1CF1004CF6A5 /* Info.plist */,
 				8EA81091256C1CF1004CF6A5 /* Preview Content */,
@@ -188,6 +188,7 @@
 		8EA81170256C4B33004CF6A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8EA8117B256C4B33004CF6A5 /* BobRoss.swift */,
 				8EA81171256C4B33004CF6A5 /* Gotham-XLight.otf */,
 				8EA81172256C4B33004CF6A5 /* Gotham-Black.otf */,
 				8EA81173256C4B33004CF6A5 /* Gotham-XLightItalic.otf */,
@@ -198,7 +199,6 @@
 				8EA81178256C4B33004CF6A5 /* Gotham-Light.otf */,
 				8EA81179256C4B33004CF6A5 /* Gotham-BoldItalic.otf */,
 				8EA8117A256C4B33004CF6A5 /* Gotham-BookItalic.otf */,
-				8EA8117B256C4B33004CF6A5 /* BobRoss.swift */,
 				8EA8117C256C4B33004CF6A5 /* Gotham-BlackItalic.otf */,
 				8EA8117D256C4B33004CF6A5 /* Gotham-MediumItalic.otf */,
 			);
