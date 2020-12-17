@@ -7,25 +7,6 @@
 
 import SwiftUI
 
-struct ColorPicker: View {
-   let text: String
-   @Binding var selectedColor: Int
-   var colors: [ProgressColor]
-   
-   var body: some View {
-      Picker(
-         selection: $selectedColor,
-         label: Text(text).foregroundColor(.secondary)
-      ) {
-         ForEach(0 ..< colors.count) {
-            Text(self.colors[$0].colorName)
-               .bold()
-               .foregroundColor(Color(UIColor(colors[$0])))
-         }
-      }
-   }
-}
-
 struct ActivitySettingsView: View {
    @EnvironmentObject var userSettings: UserSettings
    @Environment(\.managedObjectContext) var moc
@@ -74,7 +55,7 @@ struct ActivitySettingsView: View {
          let color = ProgressColor(rawValue: activity.markerColorHex!)!
          selectedColor = ProgressColor.markerColors.indexes(of: color).first ?? 0
       }
-      .environment(\.colorScheme, userSettings.selectedColorScheme)
+      .environment(\.colorScheme, userSettings.appColorScheme)
    }
    
    private func _dismiss() {

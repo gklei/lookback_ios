@@ -8,32 +8,29 @@
 import Foundation
 import SwiftUI
 
+extension ColorScheme {
+   var userDefaultsKey: Int {
+      switch self {
+      case .light: return 0
+      case .dark: return 1
+      default: return 2
+      }
+   }
+   
+   static func fromUserDefaultsKey(_ key: Int) -> ColorScheme {
+      switch key {
+      case 0: return .light
+      case 1: return .dark
+      default: return .light
+      }
+   }
+}
+
 class UserSettings: ObservableObject {
-   @Published var darkMode: Bool {
+   @Published var appColorScheme: ColorScheme {
       didSet {
-         if darkMode {
-            colorThemeIndex = 1
-         } else {
-            colorThemeIndex = 0
-         }
+         UserDefaults.standard.set(appColorScheme.userDefaultsKey, forKey: "LookbackAppColorScheme")
       }
-   }
-   
-   @Published var colorThemeIndex: Int {
-      didSet {
-         UserDefaults.standard.set(colorThemeIndex, forKey: "LookbackColorThemeIndex")
-      }
-   }
-   
-   var colorSchemes: [(name: String, value: ColorScheme)] {
-      return [
-         (name: "Light", value: .light),
-         (name: "Dark", value: .dark),
-      ]
-   }
-   
-   var selectedColorScheme: ColorScheme {
-      return colorSchemes[colorThemeIndex].value
    }
    
    @Published var defaultActivityColorIndex: Int {
@@ -47,9 +44,8 @@ class UserSettings: ObservableObject {
    }
    
    init() {
-      let index = UserDefaults.standard.integer(forKey: "LookbackColorThemeIndex")
-      self.colorThemeIndex = index
-      self.darkMode = index == 1
+      let colorSchemeKey = UserDefaults.standard.integer(forKey: "LookbackAppColorScheme")
+      self.appColorScheme = ColorScheme.fromUserDefaultsKey(colorSchemeKey)
       self.defaultActivityColorIndex = UserDefaults.standard.integer(forKey: "LookbackDefaultActivityColorIndex")
    }
 }

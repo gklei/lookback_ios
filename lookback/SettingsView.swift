@@ -14,14 +14,7 @@ struct SettingsView: View {
       NavigationView {
          Form {
             Section {
-               HStack {
-                  Text("Dark Mode")
-                     .foregroundColor(.secondary)
-                  Spacer()
-                  Toggle("", isOn: $userSettings.darkMode)
-               }
-               .pickerStyle(SegmentedPickerStyle())
-               
+               ColorSchemePicker(colorScheme: $userSettings.appColorScheme)
                ColorPicker(
                   text: "Default Activity Color",
                   selectedColor: $userSettings.defaultActivityColorIndex,

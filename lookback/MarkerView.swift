@@ -54,7 +54,7 @@ struct MarkerView: View {
                presentationMode.wrappedValue.dismiss()
          })
       }
-      .environment(\.colorScheme, userSettings.selectedColorScheme)
+      .environment(\.colorScheme, userSettings.appColorScheme)
       .onAppear(perform: {
          if let marker = activity.marker(for: date) {
             markerText = marker.descriptionText ?? ""
