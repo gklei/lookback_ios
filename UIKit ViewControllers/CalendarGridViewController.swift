@@ -76,7 +76,7 @@ class CalendarGridViewController : UIViewController {
          _cv.trailingAnchor.constraint(equalTo: view.trailingAnchor),
          _cv.bottomAnchor.constraint(equalTo: view.bottomAnchor)
       ])
-      
+
       self.view = view
    }
    
@@ -226,7 +226,7 @@ extension CalendarGridViewController: UICollectionViewDelegateFlowLayout {
    }
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-      return collectionView.bounds.width * _spacingFraction
+      return collectionView.bounds.width * (_spacingFraction / 2)
    }
    
    func scrollViewDidScroll(_ scrollView: UIScrollView) {
