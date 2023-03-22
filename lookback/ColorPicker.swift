@@ -17,10 +17,10 @@ struct ColorPicker: View {
          selection: $selectedColor,
          label: Text(text).foregroundColor(.secondary)
       ) {
-         ForEach(0 ..< colors.count) {
-            Text(self.colors[$0].colorName)
+         ForEach(0 ..< colors.count, id: \.self) { index in
+            Text(self.colors[index].colorName)
                .bold()
-               .foregroundColor(Color(UIColor(colors[$0])))
+               .foregroundColor(Color(UIColor(colors[index])))
          }
       }
    }

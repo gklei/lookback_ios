@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol ActivityViewControllerDataSource: class {
+protocol ActivityViewControllerDataSource: AnyObject {
    func marker(at date: Date) -> Marker?
 }
 
-protocol ActivityViewControllerDelegate: class {
+protocol ActivityViewControllerDelegate: AnyObject {
    func activityViewControllerDidShake()
    func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController)
    func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: ActivityViewController)

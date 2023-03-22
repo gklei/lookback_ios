@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CalendarGridViewControllerDataSource: class {
+protocol CalendarGridViewControllerDataSource: AnyObject {
    var calendar: Calendar { get }
    var startDate: Date { get }
    var endDate: Date { get }
@@ -16,7 +16,7 @@ protocol CalendarGridViewControllerDataSource: class {
    func marker(at date: Date) -> Marker?
 }
 
-protocol CalendarGridViewControllerDelegate: class {
+protocol CalendarGridViewControllerDelegate: AnyObject {
    func dateDoubleTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController)
    func dateTapped(_ date: Date, at indexPath: IndexPath, in viewController: CalendarGridViewController)
 }
@@ -234,7 +234,7 @@ extension CalendarGridViewController: UICollectionViewDelegateFlowLayout {
    }
 }
 
-protocol CalendarGridViewModelDelegate: class {
+protocol CalendarGridViewModelDelegate: AnyObject {
    func dateDoubleTapped(_ date: Date, in: CalendarGridViewController.ViewModel, at indexPath: IndexPath)
    func dateTapped(_ date: Date, in: CalendarGridViewController.ViewModel, at indexPath: IndexPath)
 }

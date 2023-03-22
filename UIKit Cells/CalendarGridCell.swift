@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-protocol CalendarGridCellDelegate: class {
+protocol CalendarGridCellDelegate: AnyObject {
    func cellDoubleTapped(cell: CalendarGridCell)
    func cellTapped(cell: CalendarGridCell)
 }
